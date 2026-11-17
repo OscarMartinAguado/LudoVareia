@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="author" content="Oscar Martin Aguado" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Explora la arquitectura y los espacios construidos del mundo romano en Vareia."
+    />
+
+    <meta
+      name="keywords"
+      content="arquitectura romana en vareia, construcciones romanas, edificios romanos, estructuras romanas"
+    />
+    <title>Arquitectura | LudoVareia</title>
+    <link rel="stylesheet" href="../css/General/style.css" />
+    <!--<link rel="stylesheet" href="../css/Donaciones/donaciones.css" />
+    <link rel="stylesheet" href="../css/Footer/footer.css" />
+    <link rel="stylesheet" href="../css/Navegacion/navegacion.css" />-->
+
+    <script src="../js/Hallazgos/hallazgos.js" defer></script>
+    <script src="../js/General/mapa.js" defer></script>
+    <script src="../js/General/donacion.js" defer></script>
+  </head>
+
+  <body>
+    <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a
+          href="../index.html"
+          class="site-header__brand"
+          aria-label="LudoVareia - Inicio"
+        >
+          <img src="../img/logo.png" alt="" class="site-header__logo" />
+          <span class="site-header__name"
+            >Ludo<span class="text-orange">Vareia</span></span
+          >
+        </a>
+        <div class="site-header__decoration" aria-hidden="true">
+          ◆ ◇ ◆ ◇ ◆ ◇ ◆
+        </div>
+
+        <a href="#" id="donate-button" class="site-header__donate">
+          <span>Apoya el proyecto</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- =====================================================
+   NAVBAR
+   ===================================================== -->
+    <nav class="navbar" aria-label="Navegación principal">
+      <div class="container navbar__inner">
+        <div class="navbar__links">
+          <a href="../index.html" class="navbar__link">Inicio</a>
+          <a href="historia.html" class="navbar__link">Historia</a>
+          <a
+            href="hallazgos.html"
+            class="navbar__link is-active"
+            aria-current="page"
+            >Hallazgos</a
+          >
+          <a href="galeria.html" class="navbar__link">Galería</a>
+
+          <a href="actividades.html" class="navbar__link"> Actividades </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- =====================================================
+       MAIN
+       ===================================================== -->
+
+    <main>
+      <section class="detail-intro">
+        <div class="container">
+          <a href="hallazgos.html" class="detail-intro__back"
+            >← Volver a Hallazgos</a
+          >
+          <p class="eyebrow">Hallazgos · Espacios construidos</p>
+          <h1>Arquitectura</h1>
+          <div class="hero__ornament" aria-hidden="true">◆</div>
+          <p class="detail-intro__text">
+            La arquitectura romana refleja la manera en que se organizaban los
+            espacios domésticos, productivos y públicos. Los muros, los
+            pavimentos, los cimientos y otros restos constructivos ofrecen
+            pistas sobre la evolución y las actividades de un asentamiento
+            antiguo.
+          </p>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="detail-hero">
+          <img
+            class="detail-hero__image"
+            src="../img/arquitectura/arquitectura-romana.jpg"
+            alt="Ejemplo ilustrativo de arquitectura romana"
+          />
+          <div class="detail-hero__content">
+            <p class="eyebrow">Construcción y territorio</p>
+            <h2>Los espacios de una ciudad romana</h2>
+            <p>
+              El estudio de las estructuras arqueológicas permite reconstruir
+              cómo se levantaban los edificios y cómo se aprovechaba el espacio.
+              Los materiales, las técnicas constructivas y la distribución de
+              las estancias son fundamentales para interpretar sus posibles
+              funciones.
+            </p>
+            <p>
+              Explora los siguientes ejemplos de arquitectura y almacenamiento
+              romanos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="artifact-section">
+        <div class="container">
+          <div class="artifact-section__header">
+            <p class="eyebrow">Explora las estructuras</p>
+            <h2>Edificios y construcción</h2>
+            <p>Pulsa sobre una imagen para consultar su ficha.</p>
+          </div>
+
+          <div class="artifact-grid">
+            <button
+              class="artifact-card"
+              type="button"
+              data-title="Horreum romano"
+              data-category="Almacenamiento"
+              data-image="../img/arquitectura/horreum.jpg"
+              data-alt="Ejemplo ilustrativo de un horreum romano"
+              data-description="Un horreum era un edificio o espacio destinado al almacenamiento. En el mundo romano podía utilizarse para guardar productos agrícolas, alimentos y otras mercancías."
+              data-context="Su identificación arqueológica requiere analizar los restos constructivos, su distribución y el contexto del hallazgo. Esta imagen es ilustrativa y no confirma por sí misma que exista un horreum excavado en Vareia."
+            >
+              <img
+                class="artifact-card__image"
+                src="../img/arquitectura/horreum.jpg"
+                alt="Ejemplo ilustrativo de un horreum romano"
+              />
+              <span class="artifact-card__body">
+                <span class="artifact-card__category">Almacenamiento</span>
+                <span class="artifact-card__title">El horreum</span>
+                <span class="artifact-card__description">
+                  Edificios romanos para guardar productos y mercancías.
+                </span>
+                <span class="artifact-card__more">Ver ficha →</span>
+              </span>
+            </button>
+
+            <button
+              class="artifact-card"
+              type="button"
+              data-title="Estructuras y muros"
+              data-category="Construcción"
+              data-image="../img/arquitectura/estructuras.jpg"
+              data-alt="Ejemplo ilustrativo de restos constructivos romanos"
+              data-description="Los muros, los cimientos y los pavimentos permiten investigar los materiales y las técnicas utilizadas en la construcción de edificios romanos."
+              data-context="La relación entre las estructuras, los objetos recuperados y los estratos arqueológicos ayuda a interpretar las distintas fases de ocupación de un yacimiento."
+            >
+              <img
+                class="artifact-card__image"
+                src="../img/arquitectura/estructuras.jpg"
+                alt="Ejemplo ilustrativo de estructuras romanas"
+              />
+              <span class="artifact-card__body">
+                <span class="artifact-card__category">Construcción</span>
+                <span class="artifact-card__title">Muros y estructuras</span>
+                <span class="artifact-card__description">
+                  Huellas materiales de los edificios antiguos.
+                </span>
+                <span class="artifact-card__more">Ver ficha →</span>
+              </span>
+            </button>
+
+            <button
+              class="artifact-card"
+              type="button"
+              data-title="Espacios habitados"
+              data-category="Urbanismo"
+              data-image="../img/arquitectura/arquitectura-romana.jpg"
+              data-alt="Ejemplo ilustrativo de un espacio arquitectónico romano"
+              data-description="Los espacios construidos podían tener funciones domésticas, artesanales, comerciales o públicas. Su distribución ofrece información sobre la organización del asentamiento."
+              data-context="La función de cada espacio debe establecerse a partir de la evidencia arqueológica disponible y no únicamente por su parecido con edificios de otros lugares."
+            >
+              <img
+                class="artifact-card__image"
+                src="../img/arquitectura/arquitectura-romana.jpg"
+                alt="Ejemplo ilustrativo de arquitectura romana"
+              />
+              <span class="artifact-card__body">
+                <span class="artifact-card__category">Urbanismo</span>
+                <span class="artifact-card__title">Espacios habitados</span>
+                <span class="artifact-card__description">
+                  La organización de los edificios y sus funciones.
+                </span>
+                <span class="artifact-card__more">Ver ficha →</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FONDO OSCURO -->
+    <div class="donate-overlay" hidden></div>
+
+    <!-- POPUP DE DONACIÓN -->
+    <section
+      class="donate-popup"
+      id="donate-popup"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="donate-title"
+      aria-describedby="donate-description"
+      tabindex="-1"
+      hidden
+    >
+      <button
+        type="button"
+        class="donate-popup__close"
+        aria-label="Cerrar ventana"
+        data-donate-close
+      >
+        ×
+      </button>
+
+      <div class="donate-popup__header">
+        <span class="donate-popup__eyebrow">
+          LUDOVAREIA · PATRIMONIO ROMANO
+        </span>
+
+        <div class="donate-popup__ornament" aria-hidden="true">◆</div>
+
+        <h2 id="donate-title">Ayúdanos a preservar Vareia</h2>
+
+        <p id="donate-description">
+          Tu aportación ayuda a mantener vivo este proyecto educativo y a
+          divulgar la historia del patrimonio romano de La Rioja.
+        </p>
+      </div>
+
+      <form id="donation-form">
+        <fieldset class="donate-amounts">
+          <legend>Selecciona la cantidad que deseas aportar</legend>
+
+          <div class="donate-amounts__grid">
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="5"
+              aria-pressed="false"
+            >
+              5 €
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="10"
+              aria-pressed="false"
+            >
+              10 €
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount is-selected"
+              data-amount="20"
+              aria-pressed="true"
+            >
+              20 €
+              <span>Popular</span>
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="50"
+              aria-pressed="false"
+            >
+              50 €
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="100"
+              aria-pressed="false"
+            >
+              100 €
+            </button>
+          </div>
+        </fieldset>
+
+        <div class="donate-custom">
+          <label for="donation-amount"> O introduce otra cantidad (€) </label>
+
+          <input
+            type="number"
+            id="donation-amount"
+            min="1"
+            max="500"
+            step="0.01"
+            placeholder="Ej. 15"
+            inputmode="decimal"
+          />
+
+          <p class="donate-custom__help">
+            Puedes elegir cualquier cantidad entre 1 € y 500 €.
+          </p>
+        </div>
+
+        <div class="donate-summary">
+          <span>Tu aportación</span>
+          <strong id="donation-summary">20,00 €</strong>
+        </div>
+
+        <button type="submit" class="donate-submit">
+          Continuar con la aportación
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <p class="donate-popup__note">Aportación puntual · Sin compromiso</p>
+      </form>
+    </section>
+
+    <!-- POPUP DE AGRADECIMIENTO -->
+    <section
+      class="donate-popup donate-popup--thank-you"
+      id="donate-thank-you"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="thank-you-title"
+      tabindex="-1"
+      hidden
+    >
+      <button
+        type="button"
+        class="donate-popup__close"
+        aria-label="Cerrar ventana"
+        data-donate-close
+      >
+        ×
+      </button>
+
+      <div class="donate-thank-you__icon" aria-hidden="true">✓</div>
+
+      <span class="donate-popup__eyebrow"> LUDOVAREIA · GRACIAS </span>
+
+      <h2 id="thank-you-title">¡Gracias por tu apoyo!</h2>
+
+      <p>
+        Tu interés y colaboración son fundamentales para continuar difundiendo
+        la historia de Vareia.
+      </p>
+
+      <p id="thank-you-amount" class="donate-thank-you__amount"></p>
+
+      <p class="donate-thank-you__disclaimer">
+        Esta es una demostración del formulario. No se ha realizado ningún
+        cobro.
+      </p>
+
+      <button type="button" class="donate-submit" data-donate-close>
+        Volver a LudoVareia
+      </button>
+    </section>
+
+    <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <!-- MARCA -->
+
+          <div class="footer__brand">
+            <img src="../img/logo.png" alt="LudoVareia" class="brand-logo" />
+
+            <span> Ludo<span class="text-orange">Vareia</span> </span>
+          </div>
+
+          <!-- INFORMACIÓN -->
+
+          <div class="footer__info">
+            <span>VAREIA · LA RIOJA</span>
+            <span>Proyecto educativo sobre el patrimonio romano</span>
+          </div>
+
+          <!-- ICONOS -->
+
+          <div class="footer__icons" aria-label="Información del proyecto">
+            <button
+              type="button"
+              id="open-map"
+              aria-label="Abrir plano de Vareia"
+              aria-haspopup="dialog"
+              aria-controls="map-modal"
+            >
+              ◫
+            </button>
+          </div>
+        </div>
+
+        <!-- PIE -->
+
+        <div class="footer__bottom">
+          <span>Patrimonio arqueológico de Vareia</span>
+          <span>© 2026 LudoVareia</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- POPUP DEL PLANO DE VAREIA -->
+    <div
+      class="map-modal"
+      id="map-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="map-modal-title"
+      hidden
+    >
+      <div class="map-modal__backdrop" data-map-close></div>
+
+      <section class="map-modal__panel">
+        <button
+          type="button"
+          class="map-modal__close"
+          aria-label="Cerrar plano"
+          data-map-close
+        >
+          ×
+        </button>
+
+        <p class="eyebrow">Vareia · La Rioja</p>
+        <h2 id="map-modal-title">La antigua ciudad romana</h2>
+
+        <p class="map-modal__description">
+          Explora el plano de reconstrucción de Vareia y descubre cómo pudo ser
+          el asentamiento en época romana.
+        </p>
+
+        <div class="map-modal__image-container">
+          <img
+            src="../img/plano-vareia.png"
+            alt="Plano de reconstrucción de la antigua ciudad romana de Vareia"
+            class="map-modal__image"
+          />
+        </div>
+
+        <p class="map-modal__note">Plano ilustrativo de la antigua Vareia.</p>
+      </section>
+    </div>
+
+    <div
+      class="artifact-modal"
+      id="artifact-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="artifact-modal-title"
+      aria-describedby="artifact-modal-description"
+      hidden
+    >
+      <div class="artifact-modal__backdrop" data-close-modal></div>
+      <div class="artifact-modal__panel">
+        <button
+          class="artifact-modal__close"
+          type="button"
+          aria-label="Cerrar ficha"
+          data-close-modal
+        >
+          ×
+        </button>
+        <img
+          class="artifact-modal__image"
+          id="artifact-modal-image"
+          src=""
+          alt=""
+        />
+        <div class="artifact-modal__content">
+          <span
+            class="artifact-modal__label"
+            id="artifact-modal-category"
+          ></span>
+          <h2 id="artifact-modal-title"></h2>
+          <p id="artifact-modal-description"></p>
+          <p id="artifact-modal-context"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

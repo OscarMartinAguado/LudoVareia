@@ -1,0 +1,366 @@
+/* =========================================================
+   05. DONACIONES
+   ========================================================= */
+/* OVERLAY */
+
+.donate-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(16, 26, 19, 0.72);
+  z-index: 999;
+  backdrop-filter: blur(3px);
+}
+
+.donate-overlay[hidden] {
+  display: none !important;
+}
+
+/* POPUP */
+
+.donate-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: min(92%, 460px);
+  max-height: 90vh;
+  overflow-y: auto;
+
+  padding: 2.2rem;
+  border-radius: 12px;
+
+  background-color: var(--color-surface);
+  color: var(--color-ink-dark);
+
+  border: 1px solid var(--color-border);
+
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.3);
+
+  z-index: 1000;
+}
+
+.donate-popup[hidden] {
+  display: none !important;
+}
+
+/* CABECERA */
+
+.donate-popup__header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.donate-popup__eyebrow {
+  display: block;
+  color: var(--color-green-dark2);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 0.8rem;
+}
+
+.donate-popup__ornament {
+  color: var(--color-orange);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.donate-popup h2 {
+  color: var(--color-ink-dark);
+  font-family: inherit;
+  font-size: 1.8rem;
+  line-height: 1.25;
+  margin-bottom: 0.8rem;
+}
+
+.donate-popup__header p {
+  color: var(--color-ink);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CANTIDADES */
+
+.donate-amounts {
+  border: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  min-width: 0;
+}
+
+.donate-amounts legend {
+  color: var(--color-ink-dark);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.donate-amounts__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem;
+}
+
+.donate-amount {
+  position: relative;
+
+  min-height: 58px;
+  padding: 0.9rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+
+  background-color: var(--color-white);
+  color: var(--color-ink-dark);
+
+  font-size: 1.1rem;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.donate-amount:hover {
+  background-color: var(--color-bg-soft);
+  border-color: var(--color-green-dark);
+  transform: translateY(-2px);
+}
+
+/* ESTADOS DE CANTIDADES */
+
+.donate-amount.is-selected {
+  background-color: var(--color-green-dark);
+  color: var(--color-white);
+  border: 2px solid var(--color-green-dark);
+}
+
+.donate-amount.is-selected:hover {
+  background-color: var(--color-green2);
+}
+
+/* ETIQUETA POPULAR */
+
+.donate-amount span {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: inherit;
+  letter-spacing: 0.5px;
+}
+
+/* CANTIDAD PERSONALIZADA */
+
+.donate-custom {
+  margin-bottom: 1.4rem;
+}
+
+.donate-custom label {
+  display: block;
+  color: var(--color-ink-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.donate-custom input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+
+  background-color: var(--color-white);
+  color: var(--color-ink-dark);
+
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.donate-custom input::placeholder {
+  color: var(--color-ink-muted);
+  opacity: 1;
+}
+
+.donate-custom input:focus {
+  outline: 3px solid var(--color-green-light);
+  outline-offset: 2px;
+  border-color: var(--color-green-dark);
+}
+
+.donate-custom__help {
+  color: var(--color-ink);
+  font-size: 0.78rem;
+  margin-top: 0.5rem;
+}
+
+/* RESUMEN */
+
+.donate-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+
+  border-top: 1px solid var(--color-border-soft);
+  border-bottom: 1px solid var(--color-border-soft);
+
+  color: var(--color-ink-dark);
+}
+
+.donate-summary span {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.donate-summary strong {
+  font-size: 1.3rem;
+  color: var(--color-green-dark2);
+}
+
+/* BOTÓN PRINCIPAL */
+
+.donate-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+
+  padding: 1rem;
+
+  border: 2px solid var(--color-green-dark);
+  border-radius: 7px;
+
+  background-color: var(--color-green-dark);
+  color: var(--color-white);
+
+  font-size: 0.95rem;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.donate-submit:hover {
+  background-color: var(--color-green2);
+  border-color: var(--color-green2);
+  transform: translateY(-2px);
+}
+
+/* AGRADECIMIENTO */
+
+.donate-popup--thank-you {
+  text-align: center;
+}
+
+.donate-thank-you__icon {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 1.3rem;
+
+  border-radius: 50%;
+
+  background-color: var(--color-green-dark);
+  color: var(--color-white);
+
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.donate-popup--thank-you h2 {
+  margin-top: 1rem;
+}
+
+.donate-popup--thank-you > p {
+  color: var(--color-ink);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.donate-thank-you__amount {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-green-dark2);
+}
+
+.donate-popup--thank-you .donate-thank-you__disclaimer {
+  padding: 0.8rem;
+  border-radius: 6px;
+  background-color: var(--color-bg-soft);
+  font-size: 0.8rem;
+}
+
+/* CIERRE */
+
+.donate-popup__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 5px;
+
+  background-color: transparent;
+  color: var(--color-green-dark2);
+
+  font-size: 1.8rem;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.donate-popup__close:hover {
+  background-color: var(--color-bg-soft);
+  color: var(--color-ink-dark);
+}
+
+/* RESPONSIVE DE DONACIONES */
+
+@media (max-width: 480px) {
+  .donate-popup {
+    padding: 1.7rem 1.3rem;
+    width: 92%;
+    max-height: 88vh;
+  }
+
+  .donate-popup h2 {
+    font-size: 1.5rem;
+  }
+
+  .donate-amounts__grid {
+    gap: 0.55rem;
+  }
+
+  .donate-amount {
+    min-height: 54px;
+    padding: 0.7rem;
+  }
+}

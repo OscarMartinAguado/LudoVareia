@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="author" content="Oscar Martin Aguado" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta name="apple-mobile-web-app-title" content="LudoVareia" />
+
+    <meta name="theme-color" content="#000000" />
+
+    <meta name="application-name" content="LudoVareia" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <meta
+      name="description"
+      content="Descubre el yacimiento romano de Vareia. Explora su historia, sus hallazgos arqueológicos y la vida cotidiana de los romanos en la antigua Vareia."
+    />
+
+    <meta
+      name="keywords"
+      content="ciudad romana vareia, historia romana, hallazgos arqueológicos, vida cotidiana romana, cerámica romana, arquitectura romana, galería imágenes, actividades romanas"
+    />
+
+    <title>LudoVareia | El yacimiento romano de Vareia</title>
+
+    <link rel="stylesheet" href="css/General/style.css" />
+    <!--<link rel="stylesheet" href="../css/Donaciones/donaciones.css" />
+    <link rel="stylesheet" href="../css/Footer/footer.css" />
+    <link rel="stylesheet" href="../css/Navegacion/navegacion.css" />
+    <link rel="stylesheet" href="../css/Inicio/home.css" />
+    <link
+      rel="stylesheet"
+      href="../css/ElementosInteractivos/elementosInteractivos.css"
+    />-->
+
+    <script src="js/Galeria/galeria.js" defer></script>
+    <script src="js/General/mapa.js" defer></script>
+    <script src="js/General/donacion.js" defer></script>
+  </head>
+
+  <body>
+    <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a
+          href="index.html"
+          class="site-header__brand"
+          aria-label="LudoVareia - Inicio"
+        >
+          <img
+            src="img/logo.png"
+            alt="Logo de LudoVareia"
+            class="site-header__logo"
+          />
+
+          <span class="site-header__name">
+            Ludo<span class="text-orange">Vareia</span>
+          </span>
+        </a>
+
+        <div class="site-header__decoration" aria-hidden="true">
+          ◆ ◇ ◆ ◇ ◆ ◇ ◆
+        </div>
+
+        <a href="#" id="donate-button" class="site-header__donate">
+          <span>Apoya el proyecto</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- =====================================================
+   NAVBAR
+   ===================================================== -->
+
+    <nav class="navbar" aria-label="Navegación principal">
+      <div class="container navbar__inner">
+        <div class="navbar__links">
+          <a class="navbar__link is-active" aria-current="page"> Inicio </a>
+
+          <a href="html/historia.html" class="navbar__link"> Historia </a>
+
+          <a href="html/hallazgos.html" class="navbar__link"> Hallazgos </a>
+
+          <a href="html/galeria.html" class="navbar__link"> Galería </a>
+
+          <a href="html/actividades.html" class="navbar__link"> Actividades </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- =====================================================
+       MAIN
+       ===================================================== -->
+
+    <main>
+      <!-- ===================================================
+         HERO
+         =================================================== -->
+
+      <section class="hero">
+        <div class="hero__content">
+          <p class="eyebrow">El yacimiento romano de</p>
+
+          <h1>VAREIA</h1>
+
+          <div class="hero__ornament" aria-hidden="true">◆</div>
+
+          <p>
+            Descubre la historia de Vareia, el antiguo asentamiento romano en La
+            Rioja, a través de sus restos, sus reconstrucciones y un viaje
+            interactivo al pasado.
+          </p>
+        </div>
+
+        <div class="hero__media">
+          <img
+            src="img/imagenStart.PNG"
+            alt="Reconstrucción del antiguo asentamiento romano de Vareia"
+          />
+        </div>
+      </section>
+
+      <!-- ===================================================
+         ACCESOS
+         =================================================== -->
+
+      <section class="section" id="explora" aria-labelledby="explora-title">
+        <div class="container">
+          <h2 id="explora-title" class="sr-only">Explora Vareia</h2>
+          <div class="grid grid-2">
+            <!-- HISTORIA -->
+
+            <a href="html/historia.html" class="feature-card">
+              <div class="feature-card__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 20h14" />
+                  <path d="M7 20V8h10v12" />
+                  <path d="M4 8h16" />
+                  <path d="M8 5h8" />
+                  <path d="M9 11v5" />
+                  <path d="M12 11v5" />
+                  <path d="M15 11v5" />
+                </svg>
+              </div>
+
+              <h3>Historia</h3>
+
+              <p>
+                Conoce el origen de Vareia, su fundación por los berones y su
+                conquista romana.
+              </p>
+
+              <span class="feature-card__arrow" aria-hidden="true"> → </span>
+            </a>
+
+            <!-- HALLAZGOS -->
+
+            <a href="html/hallazgos.html" class="feature-card">
+              <div class="feature-card__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 4h8" />
+                  <path d="M9 4v3" />
+                  <path d="M15 4v3" />
+                  <path d="M7 7h10" />
+
+                  <path
+                    d="
+                    M6 10
+                    c0-2 2-3 6-3
+                    s6 1 6 3
+                    v7
+                    c0 2-2 3-6 3
+                    s-6-1-6-3z
+                  "
+                  />
+
+                  <path d="M9 11h6" />
+                  <path d="M9 14h6" />
+                </svg>
+              </div>
+
+              <h3>Hallazgos</h3>
+
+              <p>
+                Explora los objetos encontrados en el yacimiento y descubre cómo
+                era la vida cotidiana.
+              </p>
+
+              <span class="feature-card__arrow" aria-hidden="true"> → </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================
+         GALERÍA
+         =================================================== -->
+      <section class="gallery-section">
+        <div class="container">
+          <div class="gallery-header">
+            <a href="html/galeria.html" class="gallery-all">
+              ← Ver todas las imágenes
+            </a>
+          </div>
+
+          <div class="gallery">
+            <!-- ANTERIOR -->
+
+            <button
+              type="button"
+              class="gallery__control gallery__control--prev"
+              aria-label="Imagen anterior"
+            >
+              ‹
+            </button>
+
+            <!-- CONTENEDOR DE IMÁGENES -->
+
+            <div class="gallery__track">
+              <a href="html/galeria.html?imagen=0" class="gallery__item">
+                <img
+                  src="img/galeria/galeria-mosaico.png"
+                  alt="Mosaico romano de Vareia"
+                />
+              </a>
+
+              <a href="html/galeria.html?imagen=1" class="gallery__item">
+                <img
+                  src="img/galeria/galeria-ciudad.png"
+                  alt="Reconstrucción de la ciudad romana de Vareia"
+                />
+              </a>
+
+              <a href="html/galeria.html?imagen=2" class="gallery__item">
+                <img
+                  src="img/galeria/galeria-ceramica.png"
+                  alt="Pieza de cerámica arqueológica"
+                />
+              </a>
+
+              <a href="html/galeria.html?imagen=3" class="gallery__item">
+                <img
+                  src="img/galeria/galeria-paisaje.png"
+                  alt="Paisaje del entorno arqueológico de Vareia"
+                />
+              </a>
+            </div>
+
+            <!-- SIGUIENTE -->
+
+            <button
+              type="button"
+              class="gallery__control gallery__control--next"
+              aria-label="Imagen siguiente"
+            >
+              ›
+            </button>
+          </div>
+
+          <!-- INDICADORES -->
+
+          <div class="gallery-dots">
+            <button
+              type="button"
+              class="gallery-dot is-active"
+              aria-label="Mostrar imagen 1"
+            ></button>
+
+            <button
+              type="button"
+              class="gallery-dot"
+              aria-label="Mostrar imagen 2"
+            ></button>
+
+            <button
+              type="button"
+              class="gallery-dot"
+              aria-label="Mostrar imagen 3"
+            ></button>
+
+            <button
+              type="button"
+              class="gallery-dot"
+              aria-label="Mostrar imagen 4"
+            ></button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FONDO OSCURO -->
+    <div class="donate-overlay" hidden></div>
+
+    <!-- POPUP DE DONACIÓN -->
+    <section
+      class="donate-popup"
+      id="donate-popup"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="donate-title"
+      aria-describedby="donate-description"
+      tabindex="-1"
+      hidden
+    >
+      <button
+        type="button"
+        class="donate-popup__close"
+        aria-label="Cerrar ventana"
+        data-donate-close
+      >
+        ×
+      </button>
+
+      <div class="donate-popup__header">
+        <span class="donate-popup__eyebrow">
+          LUDOVAREIA · PATRIMONIO ROMANO
+        </span>
+
+        <div class="donate-popup__ornament" aria-hidden="true">◆</div>
+
+        <h2 id="donate-title">Ayúdanos a preservar Vareia</h2>
+
+        <p id="donate-description">
+          Tu aportación ayuda a mantener vivo este proyecto educativo y a
+          divulgar la historia del patrimonio romano de La Rioja.
+        </p>
+      </div>
+
+      <form id="donation-form">
+        <fieldset class="donate-amounts">
+          <legend>Selecciona la cantidad que deseas aportar</legend>
+
+          <div class="donate-amounts__grid">
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="5"
+              aria-pressed="false"
+            >
+              5 €
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="10"
+              aria-pressed="false"
+            >
+              10 €
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount is-selected"
+              data-amount="20"
+              aria-pressed="true"
+            >
+              20 €
+              <span>Popular</span>
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="50"
+              aria-pressed="false"
+            >
+              50 €
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="100"
+              aria-pressed="false"
+            >
+              100 €
+            </button>
+          </div>
+        </fieldset>
+
+        <div class="donate-custom">
+          <label for="donation-amount"> O introduce otra cantidad (€) </label>
+
+          <input
+            type="number"
+            id="donation-amount"
+            min="1"
+            max="500"
+            step="0.01"
+            placeholder="Ej. 15"
+            inputmode="decimal"
+          />
+
+          <p class="donate-custom__help">
+            Puedes elegir cualquier cantidad entre 1 € y 500 €.
+          </p>
+        </div>
+
+        <div class="donate-summary">
+          <span>Tu aportación</span>
+          <strong id="donation-summary">20,00 €</strong>
+        </div>
+
+        <button type="submit" class="donate-submit">
+          Continuar con la aportación
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <p class="donate-popup__note">Aportación puntual · Sin compromiso</p>
+      </form>
+    </section>
+
+    <!-- POPUP DE AGRADECIMIENTO -->
+    <section
+      class="donate-popup donate-popup--thank-you"
+      id="donate-thank-you"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="thank-you-title"
+      tabindex="-1"
+      hidden
+    >
+      <button
+        type="button"
+        class="donate-popup__close"
+        aria-label="Cerrar ventana"
+        data-donate-close
+      >
+        ×
+      </button>
+
+      <div class="donate-thank-you__icon" aria-hidden="true">✓</div>
+
+      <span class="donate-popup__eyebrow"> LUDOVAREIA · GRACIAS </span>
+
+      <h2 id="thank-you-title">¡Gracias por tu apoyo!</h2>
+
+      <p>
+        Tu interés y colaboración son fundamentales para continuar difundiendo
+        la historia de Vareia.
+      </p>
+
+      <p id="thank-you-amount" class="donate-thank-you__amount"></p>
+
+      <p class="donate-thank-you__disclaimer">
+        Esta es una demostración del formulario. No se ha realizado ningún
+        cobro.
+      </p>
+
+      <button type="button" class="donate-submit" data-donate-close>
+        Volver a LudoVareia
+      </button>
+    </section>
+
+    <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <!-- MARCA -->
+
+          <div class="footer__brand">
+            <img src="img/logo.png" alt="" class="brand-logo" />
+
+            <span> Ludo<span class="text-orange">Vareia</span> </span>
+          </div>
+
+          <!-- INFORMACIÓN -->
+
+          <div class="footer__info">
+            <span>VAREIA · LA RIOJA</span>
+            <span>Proyecto educativo sobre el patrimonio romano</span>
+          </div>
+
+          <!-- ICONOS -->
+
+          <div class="footer__icons" aria-label="Información del proyecto">
+            <button
+              type="button"
+              id="open-map"
+              aria-label="Abrir plano de Vareia"
+              aria-haspopup="dialog"
+              aria-controls="map-modal"
+            >
+              ◫
+            </button>
+          </div>
+        </div>
+
+        <!-- PIE -->
+
+        <div class="footer__bottom">
+          <span>Patrimonio arqueológico de Vareia</span>
+          <span>© 2026 LudoVareia</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- POPUP DEL PLANO DE VAREIA -->
+    <div
+      class="map-modal"
+      id="map-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="map-modal-title"
+      hidden
+    >
+      <div class="map-modal__backdrop" data-map-close></div>
+
+      <section class="map-modal__panel">
+        <button
+          type="button"
+          class="map-modal__close"
+          aria-label="Cerrar plano"
+          data-map-close
+        >
+          ×
+        </button>
+
+        <p class="eyebrow">Vareia · La Rioja</p>
+        <h2 id="map-modal-title">La antigua ciudad romana</h2>
+
+        <p class="map-modal__description">
+          Explora el plano de reconstrucción de Vareia y descubre cómo pudo ser
+          el asentamiento en época romana.
+        </p>
+
+        <div class="map-modal__image-container">
+          <img
+            src="img/plano-vareia.png"
+            alt="Plano de reconstrucción de la antigua ciudad romana de Vareia"
+            class="map-modal__image"
+          />
+        </div>
+
+        <p class="map-modal__note">Plano ilustrativo de la antigua Vareia.</p>
+      </section>
+    </div>
+  </body>
+</html>

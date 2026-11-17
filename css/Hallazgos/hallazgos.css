@@ -1,0 +1,343 @@
+/* =========================================================
+   08. PÁGINAS DE HALLAZGOS
+   ========================================================= */
+/* INTRODUCCIÓN */
+
+.detail-intro {
+  padding: 34px 0 22px;
+}
+
+.detail-intro h1 {
+  margin-bottom: 14px;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+}
+
+.detail-intro__text {
+  max-width: 720px;
+  color: var(--color-text-soft);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.detail-intro__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  color: var(--color-green);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.detail-intro__back:hover {
+  color: var(--color-orange);
+}
+
+/* DETAIL HERO */
+
+.detail-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 34px;
+  padding: 20px;
+  background: var(--color-surface);
+  border: var(--border-soft);
+  border-radius: var(--radius-md);
+}
+
+.detail-hero__image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.detail-hero__content h2 {
+  margin-bottom: 14px;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.detail-hero__content p {
+  color: var(--color-text-soft);
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+/* ARTIFACT GRID */
+
+.artifact-section {
+  padding: 12px 0 38px;
+}
+
+.artifact-section__header {
+  margin-bottom: 20px;
+  padding-top: 18px;
+  border-top: var(--border-soft);
+}
+
+.artifact-section__header h2 {
+  margin-bottom: 8px;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+}
+
+.artifact-section__header p {
+  color: var(--color-text-soft);
+  font-size: 0.8rem;
+}
+
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* ARTIFACT CARDS */
+
+a.feature-card {
+  color: inherit;
+  text-decoration: none;
+}
+
+.history-card {
+  width: 100%;
+  font: inherit;
+  cursor: pointer;
+}
+
+.artifact-card {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.artifact-card:hover {
+  transform: translateY(-3px);
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.artifact-card__image {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: var(--color-bg-soft);
+  transition: transform 250ms ease;
+}
+
+.artifact-card:hover .artifact-card__image {
+  transform: scale(1.025);
+}
+
+.artifact-card__body {
+  position: relative;
+  padding: 15px;
+}
+
+.artifact-card__category {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--color-ink);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.artifact-card__title {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--color-brown-dark);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.artifact-card__description {
+  display: block;
+  color: var(--color-text-soft);
+  font-size: 0.73rem;
+  line-height: 1.6;
+}
+
+.artifact-card__more {
+  display: block;
+  margin-top: 13px;
+  color: var(--color-green);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+/* ARTIFACT MODAL */
+
+.artifact-modal[hidden] {
+  display: none !important;
+}
+
+.artifact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.artifact-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(35, 29, 23, 0.72);
+  cursor: pointer;
+}
+
+.artifact-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 780px);
+  max-height: min(88vh, 850px);
+  overflow-y: auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.artifact-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: var(--color-brown-dark);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.artifact-modal__close:hover {
+  color: white;
+  background: var(--color-orange);
+}
+
+.artifact-modal__image {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 40vh, 360px);
+  object-fit: cover;
+  background: var(--color-bg-soft);
+}
+
+.artifact-modal__content {
+  padding: 25px 28px 28px;
+}
+
+.artifact-modal__content h2 {
+  margin-bottom: 14px;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.artifact-modal__content p {
+  margin-bottom: 12px;
+  color: var(--color-text-soft);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.artifact-modal__label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-orange);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* RESPONSIVE DE HALLAZGOS */
+
+@media (max-width: 950px) {
+  .artifact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .detail-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-hero__image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 650px) {
+  .detail-intro {
+    padding-top: 25px;
+  }
+
+  .detail-intro h1 {
+    font-size: 3rem;
+  }
+
+  .detail-hero {
+    gap: 18px;
+    padding: 12px;
+  }
+
+  .detail-hero__image {
+    height: 220px;
+  }
+
+  .artifact-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .artifact-card {
+    display: grid;
+    grid-template-columns: 115px minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .artifact-card__image {
+    height: 100%;
+    min-height: 155px;
+  }
+
+  .artifact-card__body {
+    padding: 12px;
+  }
+
+  .artifact-card__title {
+    font-size: 1.05rem;
+  }
+
+  .artifact-modal {
+    padding: 12px;
+  }
+
+  .artifact-modal__content {
+    padding: 20px;
+  }
+
+  .artifact-modal__image {
+    height: 240px;
+  }
+}

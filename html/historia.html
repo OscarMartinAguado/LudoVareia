@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="author" content="Oscar Martin Aguado" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Historia de Vareia, el antiguo asentamiento romano de La Rioja."
+    />
+
+    <meta
+      name="keywords"
+      content="historia de la ciudad romana vareia, origen de vareia, desarrollo de vareia, decadencia de vareia"
+    />
+
+    <title>Historia | LudoVareia</title>
+
+    <link rel="stylesheet" href="../css/General/style.css" />
+    <!--<link rel="stylesheet" href="../css/Donaciones/donaciones.css" />
+    <link rel="stylesheet" href="../css/Footer/footer.css" />
+    <link rel="stylesheet" href="../css/Navegacion/navegacion.css" />-->
+
+    <script src="../js/Historia/historia.js" defer></script>
+    <script src="../js/General/mapa.js" defer></script>
+    <script src="../js/General/donacion.js" defer></script>
+  </head>
+
+  <body>
+    <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a
+          href="../index.html"
+          class="site-header__brand"
+          aria-label="LudoVareia - Inicio"
+        >
+          <img
+            src="../img/logo.png"
+            alt="LudoVareia"
+            class="site-header__logo"
+          />
+
+          <span class="site-header__name">
+            Ludo<span class="text-orange">Vareia</span>
+          </span>
+        </a>
+
+        <div class="site-header__decoration" aria-hidden="true">
+          ◆ ◇ ◆ ◇ ◆ ◇ ◆
+        </div>
+
+        <a href="#" id="donate-button" class="site-header__donate">
+          <span>Apoya el proyecto</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- =====================================================
+   NAVBAR
+   ===================================================== -->
+
+    <nav class="navbar" aria-label="Navegación principal">
+      <div class="container navbar__inner">
+        <div class="navbar__links">
+          <a href="../index.html" class="navbar__link"> Inicio </a>
+
+          <a class="navbar__link is-active" aria-current="page"> Historia </a>
+
+          <a href="hallazgos.html" class="navbar__link"> Hallazgos </a>
+
+          <a href="galeria.html" class="navbar__link"> Galería </a>
+
+          <a href="actividades.html" class="navbar__link"> Actividades </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- =====================================================
+       MAIN
+       ===================================================== -->
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <p class="eyebrow">El pasado de Vareia</p>
+
+          <h1>Historia</h1>
+
+          <div class="hero__ornament" aria-hidden="true">◆</div>
+
+          <p>
+            Vareia fue un importante asentamiento situado junto al río Ebro, en
+            el actual entorno de Logroño. Su historia está vinculada a los
+            berones y posteriormente a la presencia romana en la zona.
+          </p>
+
+          <p>
+            El enclave tuvo una posición estratégica gracias a su proximidad al
+            río y a las vías de comunicación que conectaban diferentes
+            territorios de la península.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================================================
+         ORIGEN
+         =================================================== -->
+
+      <section class="section">
+        <div class="container">
+          <div class="grid grid-2">
+            <!-- LOS BERONES -->
+            <button
+              type="button"
+              class="feature-card history-card"
+              data-dialog-open="berones-dialog"
+              aria-haspopup="dialog"
+            >
+              <div class="feature-card__icon">◆</div>
+
+              <h3>Los berones</h3>
+
+              <p>
+                Descubre el pueblo prerromano que habitó el territorio riojano
+                antes de la expansión romana.
+              </p>
+
+              <span class="feature-card__arrow" aria-hidden="true"> → </span>
+            </button>
+
+            <!-- LLEGADA DE ROMA -->
+
+            <button
+              type="button"
+              class="feature-card history-card"
+              data-dialog-open="roma-dialog"
+              aria-haspopup="dialog"
+            >
+              <div class="feature-card__icon">◆</div>
+
+              <h3>La llegada de Roma</h3>
+
+              <p>
+                Conoce cómo surgió la ciudad romana de Vareia y cómo se
+                desarrolló junto al río Ebro.
+              </p>
+
+              <span class="feature-card__arrow" aria-hidden="true"> → </span>
+            </button>
+
+            <!--
+            <article class="feature-card">
+              <h2>Los berones</h2>
+
+              <p>
+                Antes de la llegada de Roma, el territorio estaba habitado por
+                los berones, un pueblo de origen celtibérico relacionado con el
+                valle del Ebro.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <h2>La llegada de Roma</h2>
+
+              <p>
+                La expansión romana transformó el asentamiento y convirtió
+                Vareia en un punto relevante dentro de las comunicaciones de la
+                región.
+              </p>
+            </article>
+            -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================
+         VAREIA ROMANA
+         =================================================== -->
+
+      <section class="section">
+        <div class="container">
+          <p class="eyebrow">Vareia romana</p>
+
+          <h2>Un enclave estratégico</h2>
+
+          <p>
+            Durante la época romana, Vareia destacó por su situación junto al
+            Ebro. El río facilitaba las comunicaciones y el transporte, mientras
+            que las vías terrestres conectaban el asentamiento con otros núcleos
+            de población.
+          </p>
+
+          <p>
+            Los restos arqueológicos permiten conocer diferentes aspectos de la
+            vida cotidiana, la organización del asentamiento y las actividades
+            económicas desarrolladas en la zona.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+     POPUP HISTÓRICO: LOS BERONES
+     ===================================================== -->
+
+    <dialog class="history-dialog" id="berones-dialog">
+      <div class="history-dialog__panel">
+        <form method="dialog">
+          <button class="history-dialog__close" aria-label="Cerrar ventana">
+            ×
+          </button>
+        </form>
+
+        <p class="eyebrow">Antes de Roma · La Rioja</p>
+
+        <h2>Los berones</h2>
+
+        <div class="history-dialog__content">
+          <h3>Un pueblo prerromano</h3>
+
+          <p>
+            Los berones fueron un pueblo de origen celtibérico que habitó el
+            valle medio del Ebro y buena parte del territorio de la actual
+            comunidad de La Rioja.
+          </p>
+
+          <p>
+            Su economía estaba basada principalmente en la agricultura y la
+            ganadería, aunque también desarrollaron actividades artesanales y
+            comerciales.
+          </p>
+
+          <h3>Organización y asentamientos</h3>
+
+          <p>
+            Los berones habitaban diferentes poblados y asentamientos
+            fortificados, situados frecuentemente en lugares elevados que
+            facilitaban la defensa y el control del territorio.
+          </p>
+
+          <p>
+            Entre los yacimientos relacionados con este pueblo destaca La
+            Custodia, situado en Viana (Navarra), donde se han documentado
+            restos de viviendas, murallas, calles y espacios artesanales.
+          </p>
+
+          <h3>El conflicto con Roma</h3>
+
+          <p>
+            Durante el siglo I a. C., la expansión romana transformó
+            profundamente el territorio. En el año 76 a. C., durante las guerras
+            sertorianas, las fuentes antiguas mencionan un ataque de Sertorio
+            contra un importante asentamiento berón.
+          </p>
+
+          <p>
+            La conquista romana supuso una progresiva transformación política,
+            económica y cultural de las comunidades indígenas.
+          </p>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- =====================================================
+     POPUP HISTÓRICO: VAREIA ROMANA
+     ===================================================== -->
+
+    <dialog class="history-dialog" id="roma-dialog">
+      <div class="history-dialog__panel">
+        <form method="dialog">
+          <button class="history-dialog__close" aria-label="Cerrar ventana">
+            ×
+          </button>
+        </form>
+
+        <p class="eyebrow">Época romana · Varea</p>
+
+        <h2>La llegada de Roma</h2>
+
+        <div class="history-dialog__content">
+          <h3>El nacimiento de la ciudad romana</h3>
+
+          <p>
+            La presencia romana dio lugar al desarrollo de Vareia, una ciudad
+            situada en el actual barrio logroñés de Varea, junto a la
+            desembocadura del río Iregua en el Ebro.
+          </p>
+
+          <p>
+            Su origen está relacionado con un campamento militar de una unidad
+            de la Legio IIII Macedonica. Tras la marcha de las tropas durante el
+            siglo I, el asentamiento fue desarrollándose como un núcleo urbano
+            civil.
+          </p>
+
+          <h3>Una situación estratégica</h3>
+
+          <p>
+            La ubicación de Vareia resultaba especialmente favorable. Su
+            proximidad al Ebro permitía aprovechar las comunicaciones fluviales
+            y participar en el transporte de mercancías.
+          </p>
+
+          <p>
+            También estaba conectada con diferentes vías terrestres romanas, que
+            facilitaban las relaciones comerciales y la comunicación con otros
+            asentamientos de la península.
+          </p>
+
+          <h3>La vida en la ciudad</h3>
+
+          <p>
+            Vareia llegó a contar con calles organizadas, viviendas, espacios
+            públicos y zonas destinadas a diferentes actividades económicas.
+          </p>
+
+          <p>
+            Uno de sus elementos más destacados fue el sistema de abastecimiento
+            de agua, que incluía un canal subterráneo de aproximadamente 1.100
+            metros.
+          </p>
+
+          <p>
+            También se han documentado unas termas romanas, donde los habitantes
+            podían bañarse y disfrutar de diferentes espacios destinados al
+            cuidado personal y a la vida social.
+          </p>
+
+          <h3>El desarrollo económico</h3>
+
+          <p>
+            La actividad artesanal tuvo importancia en la ciudad. Las
+            excavaciones han permitido identificar zonas relacionadas con la
+            producción cerámica y el trabajo de la piedra.
+          </p>
+
+          <p>
+            Destaca especialmente la existencia de un taller de cantería o
+            taller lapidario, donde se elaboraban elementos de piedra e
+            inscripciones funerarias.
+          </p>
+
+          <h3>La evolución de Vareia</h3>
+
+          <p>
+            La ciudad experimentó su mayor expansión durante los siglos I, II y
+            III d. C. Sin embargo, durante la Antigüedad tardía su superficie
+            urbana fue reduciéndose progresivamente.
+          </p>
+
+          <p>
+            Los restos arqueológicos muestran que el asentamiento mantuvo
+            actividad durante varios siglos, llegando hasta el siglo V d. C.
+          </p>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- FONDO OSCURO -->
+    <div class="donate-overlay" hidden></div>
+
+    <!-- POPUP DE DONACIÓN -->
+    <section
+      class="donate-popup"
+      id="donate-popup"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="donate-title"
+      aria-describedby="donate-description"
+      tabindex="-1"
+      hidden
+    >
+      <button
+        type="button"
+        class="donate-popup__close"
+        aria-label="Cerrar ventana"
+        data-donate-close
+      >
+        ×
+      </button>
+
+      <div class="donate-popup__header">
+        <span class="donate-popup__eyebrow">
+          LUDOVAREIA · PATRIMONIO ROMANO
+        </span>
+
+        <div class="donate-popup__ornament" aria-hidden="true">◆</div>
+
+        <h2 id="donate-title">Ayúdanos a preservar Vareia</h2>
+
+        <p id="donate-description">
+          Tu aportación ayuda a mantener vivo este proyecto educativo y a
+          divulgar la historia del patrimonio romano de La Rioja.
+        </p>
+      </div>
+
+      <form id="donation-form">
+        <fieldset class="donate-amounts">
+          <legend>Selecciona la cantidad que deseas aportar</legend>
+
+          <div class="donate-amounts__grid">
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="5"
+              aria-pressed="false"
+            >
+              5 €
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="10"
+              aria-pressed="false"
+            >
+              10 €
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount is-selected"
+              data-amount="20"
+              aria-pressed="true"
+            >
+              20 €
+              <span>Popular</span>
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="50"
+              aria-pressed="false"
+            >
+              50 €
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="100"
+              aria-pressed="false"
+            >
+              100 €
+            </button>
+          </div>
+        </fieldset>
+
+        <div class="donate-custom">
+          <label for="donation-amount"> O introduce otra cantidad (€) </label>
+
+          <input
+            type="number"
+            id="donation-amount"
+            min="1"
+            max="500"
+            step="0.01"
+            placeholder="Ej. 15"
+            inputmode="decimal"
+          />
+
+          <p class="donate-custom__help">
+            Puedes elegir cualquier cantidad entre 1 € y 500 €.
+          </p>
+        </div>
+
+        <div class="donate-summary">
+          <span>Tu aportación</span>
+          <strong id="donation-summary">20,00 €</strong>
+        </div>
+
+        <button type="submit" class="donate-submit">
+          Continuar con la aportación
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <p class="donate-popup__note">Aportación puntual · Sin compromiso</p>
+      </form>
+    </section>
+
+    <!-- POPUP DE AGRADECIMIENTO -->
+    <section
+      class="donate-popup donate-popup--thank-you"
+      id="donate-thank-you"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="thank-you-title"
+      tabindex="-1"
+      hidden
+    >
+      <button
+        type="button"
+        class="donate-popup__close"
+        aria-label="Cerrar ventana"
+        data-donate-close
+      >
+        ×
+      </button>
+
+      <div class="donate-thank-you__icon" aria-hidden="true">✓</div>
+
+      <span class="donate-popup__eyebrow"> LUDOVAREIA · GRACIAS </span>
+
+      <h2 id="thank-you-title">¡Gracias por tu apoyo!</h2>
+
+      <p>
+        Tu interés y colaboración son fundamentales para continuar difundiendo
+        la historia de Vareia.
+      </p>
+
+      <p id="thank-you-amount" class="donate-thank-you__amount"></p>
+
+      <p class="donate-thank-you__disclaimer">
+        Esta es una demostración del formulario. No se ha realizado ningún
+        cobro.
+      </p>
+
+      <button type="button" class="donate-submit" data-donate-close>
+        Volver a LudoVareia
+      </button>
+    </section>
+
+    <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <!-- MARCA -->
+
+          <div class="footer__brand">
+            <img src="../img/logo.png" alt="LudoVareia" class="brand-logo" />
+
+            <span> Ludo<span class="text-orange">Vareia</span> </span>
+          </div>
+
+          <!-- INFORMACIÓN -->
+
+          <div class="footer__info">
+            <span>VAREIA · LA RIOJA</span>
+            <span>Proyecto educativo sobre el patrimonio romano</span>
+          </div>
+
+          <!-- ICONOS -->
+
+          <div class="footer__icons" aria-label="Información del proyecto">
+            <button
+              type="button"
+              id="open-map"
+              aria-label="Abrir plano de Vareia"
+              aria-haspopup="dialog"
+              aria-controls="map-modal"
+            >
+              ◫
+            </button>
+          </div>
+        </div>
+
+        <!-- PIE -->
+
+        <div class="footer__bottom">
+          <span>Patrimonio arqueológico de Vareia</span>
+          <span>© 2026 LudoVareia</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- POPUP DEL PLANO DE VAREIA -->
+    <div
+      class="map-modal"
+      id="map-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="map-modal-title"
+      hidden
+    >
+      <div class="map-modal__backdrop" data-map-close></div>
+
+      <section class="map-modal__panel">
+        <button
+          type="button"
+          class="map-modal__close"
+          aria-label="Cerrar plano"
+          data-map-close
+        >
+          ×
+        </button>
+
+        <p class="eyebrow">Vareia · La Rioja</p>
+        <h2 id="map-modal-title">La antigua ciudad romana</h2>
+
+        <p class="map-modal__description">
+          Explora el plano de reconstrucción de Vareia y descubre cómo pudo ser
+          el asentamiento en época romana.
+        </p>
+
+        <div class="map-modal__image-container">
+          <img
+            src="../img/plano-vareia.png"
+            alt="Plano de reconstrucción de la antigua ciudad romana de Vareia"
+            class="map-modal__image"
+          />
+        </div>
+
+        <p class="map-modal__note">Plano ilustrativo de la antigua Vareia.</p>
+      </section>
+    </div>
+  </body>
+</html>
