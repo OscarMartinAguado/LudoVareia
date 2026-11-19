@@ -53,9 +53,13 @@ if (track && items.length > 0 && prevButton && nextButton) {
     /* ACTUALIZAR INDICADORES */
 
     dots.forEach((dot, index) => {
+      const isActive = index === currentIndex;
+
       dot.hidden = index > maxIndex;
 
-      dot.classList.toggle("is-active", index === currentIndex);
+      dot.classList.toggle("is-active", isActive);
+
+      dot.setAttribute("aria-current", String(isActive));
     });
 
     if (dotsContainer) {

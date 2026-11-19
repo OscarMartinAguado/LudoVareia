@@ -20,7 +20,7 @@ const closeButtons = document.querySelectorAll("[data-donate-close]");
 // ELEMENTOS DE LA PÁGINA QUE DEBEN QUEDAR INACTIVOS
 const pageElements = document.querySelectorAll("header, nav, main, footer");
 
-let selectedAmount = 20;
+let selectedAmount = 5;
 let previousFocus = null;
 let activePopup = null;
 
@@ -83,7 +83,7 @@ amountInput.addEventListener("input", () => {
 
   selectedAmount = null;
 
-  if (Number.isFinite(amount) && amount >= 1 && amount <= 5000) {
+  if (Number.isFinite(amount) && amount >= 1 && amount <= 50) {
     donationSummary.textContent = formatAmount(amount);
   } else {
     donationSummary.textContent = "Cantidad no válida";
@@ -226,7 +226,7 @@ donationForm.addEventListener("submit", (e) => {
   }
 
   // Validar cantidad
-  if (!Number.isFinite(amount) || amount < 1 || amount > 5000) {
+  if (!Number.isFinite(amount) || amount < 1 || amount > 50) {
     amountInput.setCustomValidity(
       "Introduce una cantidad entre 1 € y 5.000 €.",
     );

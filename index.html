@@ -14,10 +14,7 @@
 
     <meta name="application-name" content="LudoVareia" />
 
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta
       name="description"
@@ -29,6 +26,54 @@
       content="ciudad romana vareia, historia romana, hallazgos arqueológicos, vida cotidiana romana, cerámica romana, arquitectura romana, galería imágenes, actividades romanas"
     />
 
+    <!--Open Graph-->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="LudoVareia" />
+    <meta
+      property="og:title"
+      content="LudoVareia | El yacimiento romano de Vareia"
+    />
+    <meta
+      property="og:description"
+      content="Descubre la historia de Vareia, sus hallazgos arqueológicos y la vida cotidiana en la antigua ciudad romana."
+    />
+    <meta property="og:url" content="https://ludovareia.vercel.app/" />
+
+    <!--Twitter Cards-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="LudoVareia | El yacimiento romano de Vareia"
+    />
+    <meta
+      name="twitter:description"
+      content="Descubre la historia y el patrimonio romano de Vareia."
+    />
+
+    <!--Imagen de presentacion-->
+
+    <meta
+      property="og:image"
+      content="https://ludovareia.vercel.app/img/imagenStart.png"
+    />
+
+    <meta
+      property="og:image:alt"
+      content="Reconstrucción del antiguo asentamiento romano de Vareia"
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://ludovareia.vercel.app/img/imagenStart.png"
+    />
+
+    <meta
+      name="twitter:image:alt"
+      content="Reconstrucción del antiguo asentamiento romano de Vareia"
+    />
+
+    <!--Titulo y enlaces a css y script-->
     <title>LudoVareia | El yacimiento romano de Vareia</title>
 
     <link rel="stylesheet" href="css/General/style.css" />
@@ -40,13 +85,52 @@
       rel="stylesheet"
       href="../css/ElementosInteractivos/elementosInteractivos.css"
     />-->
+    <link rel="canonical" href="https://ludovareia.vercel.app/" />
 
     <script src="js/Galeria/galeria.js" defer></script>
     <script src="js/General/mapa.js" defer></script>
     <script src="js/General/donacion.js" defer></script>
+
+    <!--WebSite para GEO-->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://ludovareia.vercel.app/#website",
+            "name": "LudoVareia",
+            "url": "https://ludovareia.vercel.app/",
+            "inLanguage": "es",
+            "description": "Proyecto educativo sobre la historia, los hallazgos arqueológicos y el patrimonio romano de Vareia."
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://ludovareia.vercel.app/#organization",
+            "name": "LudoVareia",
+            "url": "https://ludovareia.vercel.app/",
+            "description": "Proyecto educativo dedicado a divulgar la historia y el patrimonio arqueológico de la antigua Vareia, en La Rioja."
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://ludovareia.vercel.app/#webpage",
+            "url": "https://ludovareia.vercel.app/",
+            "name": "LudoVareia | El yacimiento romano de Vareia",
+            "isPartOf": {
+              "@id": "https://ludovareia.vercel.app/#website"
+            },
+            "about": {
+              "@id": "https://ludovareia.vercel.app/#organization"
+            },
+            "inLanguage": "es"
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>
+    <a class="skip-link" href="#contenido"> Saltar al contenido principal </a>
     <!-- =====================================================
        HEADER
        ===================================================== -->
@@ -73,10 +157,16 @@
           ◆ ◇ ◆ ◇ ◆ ◇ ◆
         </div>
 
-        <a href="#" id="donate-button" class="site-header__donate">
+        <button
+          type="button"
+          id="donate-button"
+          class="site-header__donate"
+          aria-haspopup="dialog"
+          aria-controls="donate-popup"
+        >
           <span>Apoya el proyecto</span>
           <span aria-hidden="true">→</span>
-        </a>
+        </button>
       </div>
     </header>
 
@@ -87,7 +177,13 @@
     <nav class="navbar" aria-label="Navegación principal">
       <div class="container navbar__inner">
         <div class="navbar__links">
-          <a class="navbar__link is-active" aria-current="page"> Inicio </a>
+          <a
+            href="index.html"
+            class="navbar__link is-active"
+            aria-current="page"
+          >
+            Inicio
+          </a>
 
           <a href="html/historia.html" class="navbar__link"> Historia </a>
 
@@ -104,7 +200,7 @@
        MAIN
        ===================================================== -->
 
-    <main>
+    <main id="contenido">
       <!-- ===================================================
          HERO
          =================================================== -->
@@ -207,9 +303,13 @@
       <!-- ===================================================
          GALERÍA
          =================================================== -->
-      <section class="gallery-section">
+      <section class="gallery-section" aria-labelledby="gallery-title">
         <div class="container">
           <div class="gallery-header">
+            <h2 id="gallery-title" class="sr-only">
+              Galería de imágenes de Vareia
+            </h2>
+
             <a href="html/galeria.html" class="gallery-all">
               ← Ver todas las imágenes
             </a>
@@ -228,7 +328,12 @@
 
             <!-- CONTENEDOR DE IMÁGENES -->
 
-            <div class="gallery__track">
+            <div
+              class="gallery__track"
+              role="region"
+              aria-label="Galería de imágenes destacadas de Vareia"
+              aria-roledescription="carrusel"
+            >
               <a href="html/galeria.html?imagen=0" class="gallery__item">
                 <img
                   src="img/galeria/galeria-mosaico.png"
@@ -276,24 +381,28 @@
               type="button"
               class="gallery-dot is-active"
               aria-label="Mostrar imagen 1"
+              aria-current="true"
             ></button>
 
             <button
               type="button"
               class="gallery-dot"
               aria-label="Mostrar imagen 2"
+              aria-current="false"
             ></button>
 
             <button
               type="button"
               class="gallery-dot"
               aria-label="Mostrar imagen 3"
+              aria-current="false"
             ></button>
 
             <button
               type="button"
               class="gallery-dot"
               aria-label="Mostrar imagen 4"
+              aria-current="false"
             ></button>
           </div>
         </div>
@@ -346,8 +455,17 @@
             <button
               type="button"
               class="donate-amount"
-              data-amount="5"
+              data-amount="1"
               aria-pressed="false"
+            >
+              1 €
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount is-selected"
+              data-amount="5"
+              aria-pressed="true"
             >
               5 €
             </button>
@@ -355,38 +473,19 @@
             <button
               type="button"
               class="donate-amount"
-              data-amount="10"
+              data-amount="15"
               aria-pressed="false"
             >
-              10 €
-            </button>
-
-            <button
-              type="button"
-              class="donate-amount is-selected"
-              data-amount="20"
-              aria-pressed="true"
-            >
-              20 €
-              <span>Popular</span>
+              15 €
             </button>
 
             <button
               type="button"
               class="donate-amount"
-              data-amount="50"
+              data-amount="30"
               aria-pressed="false"
             >
-              50 €
-            </button>
-
-            <button
-              type="button"
-              class="donate-amount"
-              data-amount="100"
-              aria-pressed="false"
-            >
-              100 €
+              30 €
             </button>
           </div>
         </fieldset>
@@ -398,20 +497,22 @@
             type="number"
             id="donation-amount"
             min="1"
-            max="500"
+            max="50"
             step="0.01"
             placeholder="Ej. 15"
             inputmode="decimal"
           />
 
           <p class="donate-custom__help">
-            Puedes elegir cualquier cantidad entre 1 € y 500 €.
+            Puedes elegir cualquier cantidad entre 1 € y 50 €.
           </p>
         </div>
 
         <div class="donate-summary">
           <span>Tu aportación</span>
-          <strong id="donation-summary">20,00 €</strong>
+          <strong id="donation-summary" aria-live="polite" aria-atomic="true"
+            >5,00 €</strong
+          >
         </div>
 
         <button type="submit" class="donate-submit">
@@ -489,7 +590,11 @@
 
           <!-- ICONOS -->
 
-          <div class="footer__icons" aria-label="Información del proyecto">
+          <div
+            class="footer__icons"
+            role="group"
+            aria-label="Acciones e información del proyecto"
+          >
             <button
               type="button"
               id="open-map"
