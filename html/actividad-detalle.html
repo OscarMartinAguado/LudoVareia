@@ -4,18 +4,41 @@
     <meta charset="UTF-8" />
 
     <meta name="author" content="Oscar Martin Aguado" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="noindex,follow" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta
       name="description"
-      content="Consulta la actividad y completa el formulario de inscripción de LudoVareia."
+      content="Consulta los detalles de las actividades educativas de LudoVareia."
     />
 
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="LudoVareia" />
+    <meta property="og:title" content="Actividad | LudoVareia" />
     <meta
-      name="keywords"
-      content="actividad de cerámica romana, taller de cerámica, vida cotidiana romana, experiencias en vareia"
+      property="og:description"
+      content="Consulta los detalles de las actividades educativas de LudoVareia."
+    />
+    <meta property="og:url" content="" />
+    <meta
+      property="og:image"
+      content="https://ludovareia.vercel.app/img/vareiaStart.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Reconstrucción del antiguo asentamiento romano de Vareia"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Actividad | LudoVareia" />
+    <meta
+      name="twitter:description"
+      content="Consulta los detalles de las actividades educativas de LudoVareia."
+    />
+    <meta
+      name="twitter:image"
+      content="https://ludovareia.vercel.app/img/vareiaStart.png"
     />
 
     <title>Actividad | LudoVareia</title>
@@ -34,6 +57,7 @@
   </head>
 
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
     <!-- =====================================================
        HEADER
        ===================================================== -->
@@ -54,10 +78,16 @@
           ◆ ◇ ◆ ◇ ◆ ◇ ◆
         </div>
 
-        <a href="#" id="donate-button" class="site-header__donate">
-          <span>Apoya el proyecto</span>
+        <button
+          type="button"
+          id="donate-button"
+          class="site-header__donate"
+          aria-haspopup="dialog"
+          aria-controls="donate-popup"
+        >
+          <span>Donación de prueba</span>
           <span aria-hidden="true">→</span>
-        </a>
+        </button>
       </div>
     </header>
 
@@ -75,7 +105,7 @@
           <a
             href="actividades.html"
             class="navbar__link is-active"
-            aria-current="page"
+            aria-current="location"
             >Actividades</a
           >
         </div>
@@ -86,7 +116,7 @@
        MAIN
        ===================================================== -->
 
-    <main class="activity-detail-page">
+    <main id="contenido" class="activity-detail-page" tabindex="-1">
       <div class="container">
         <a href="actividades.html" class="detail-intro__back">
           ← Volver a actividades
@@ -112,7 +142,7 @@
               <div class="activity-detail__content">
                 <p class="eyebrow">LudoVareia · Actividades</p>
 
-                <h1 id="activity-title">Cargando actividad…</h1>
+                <h1 id="activity-title">Abre una actividad desde el calendario</h1>
 
                 <p
                   class="activity-detail__description"
@@ -142,8 +172,9 @@
                 </dl>
 
                 <p class="activity-detail__note">
-                  Actividad educativa de carácter orientativo. La inscripción se
-                  guarda en este dispositivo y no se envía a un servidor.
+                  Demostración educativa: no reserva una plaza ni envía datos a
+                  un servidor. La información introducida se guarda solo en este
+                  navegador; no escribas datos reales.
                 </p>
               </div>
             </section>
@@ -155,9 +186,9 @@
               aria-labelledby="registration-title"
             >
               <div class="registration-section__heading">
-                <p class="eyebrow">Reserva tu plaza</p>
+                <p class="eyebrow">Formulario de demostración</p>
 
-                <h2 id="registration-title">Formulario de inscripción</h2>
+                <h2 id="registration-title">Formulario de demostración</h2>
               </div>
 
               <div
@@ -231,7 +262,8 @@
 
                   <span>
                     He leído que esta solicitud es una demostración y que los
-                    datos se guardan solo en este dispositivo.
+                    datos se guardan solo en este dispositivo. Consulta la
+                    <a href="privacidad.html">Política de privacidad</a>.
                   </span>
                 </label>
 
@@ -239,7 +271,7 @@
                   class="btn btn--primary registration-form__submit"
                   type="submit"
                 >
-                  Confirmar inscripción
+                  Probar inscripción (no reservar)
                   <span aria-hidden="true">→</span>
                 </button>
               </form>
@@ -256,7 +288,8 @@
                 <h2>Opiniones y reseñas</h2>
 
                 <p>
-                  Descubre qué opinan quienes han participado en esta actividad.
+                  En esta demostración, las reseñas se guardan solo en este
+                  navegador y no se comparten con otros visitantes.
                 </p>
               </div>
 
@@ -277,14 +310,17 @@
               <div class="reviews-action">
                 <h3>¿Has participado?</h3>
 
-                <p>Comparte tu experiencia con otros visitantes.</p>
+                <p>
+                  Prueba el formulario. No incluyas datos personales: la reseña
+                  solo se verá en este navegador.
+                </p>
 
                 <button
                   type="button"
                   id="open-review-popup"
                   class="btn btn--primary"
                 >
-                  Escribir una reseña →
+                  Probar reseña →
                 </button>
               </div>
 
@@ -323,7 +359,10 @@
 
             <h2 id="review-popup-title">Escribe tu reseña</h2>
 
-            <p>Cuéntanos cómo ha sido tu experiencia en esta actividad.</p>
+            <p>
+              Es una prueba local: no incluyas datos personales ni información
+              sensible. Consulta la <a href="privacidad.html">Política de privacidad</a>.
+            </p>
           </div>
 
           <div class="reviews-form-container">
@@ -377,7 +416,7 @@
               ></textarea>
 
               <button type="submit" class="btn btn--primary">
-                Publicar reseña →
+                Guardar reseña de prueba →
               </button>
 
               <p id="review-message" role="status" aria-live="polite"></p>
@@ -417,17 +456,17 @@
 
         <div class="donate-popup__ornament" aria-hidden="true">◆</div>
 
-        <h2 id="donate-title">Ayúdanos a preservar Vareia</h2>
+        <h2 id="donate-title">Demostración de donación</h2>
 
         <p id="donate-description">
-          Tu aportación ayuda a mantener vivo este proyecto educativo y a
-          divulgar la historia del patrimonio romano de La Rioja.
+          Este prototipo no acepta donaciones. Puedes probar la interfaz, pero no
+          se realizará ningún cobro ni se enviarán datos.
         </p>
       </div>
 
       <form id="donation-form">
         <fieldset class="donate-amounts">
-          <legend>Selecciona la cantidad que deseas aportar</legend>
+          <legend>Selecciona un importe de prueba</legend>
 
           <div class="donate-amounts__grid">
             <button
@@ -469,7 +508,7 @@
         </fieldset>
 
         <div class="donate-custom">
-          <label for="donation-amount"> O introduce otra cantidad (€) </label>
+          <label for="donation-amount"> O introduce otro importe de prueba (€) </label>
 
           <input
             type="number"
@@ -487,18 +526,18 @@
         </div>
 
         <div class="donate-summary">
-          <span>Tu aportación</span>
+          <span>Importe de prueba</span>
           <strong id="donation-summary" aria-live="polite" aria-atomic="true"
             >5,00 €</strong
           >
         </div>
 
         <button type="submit" class="donate-submit">
-          Continuar con la aportación
+          Finalizar demostración
           <span aria-hidden="true">→</span>
         </button>
 
-        <p class="donate-popup__note">Aportación puntual · Sin compromiso</p>
+        <p class="donate-popup__note">No se realizará ningún cobro.</p>
       </form>
     </section>
 
@@ -525,11 +564,10 @@
 
       <span class="donate-popup__eyebrow"> LUDOVAREIA · GRACIAS </span>
 
-      <h2 id="thank-you-title">¡Gracias por tu apoyo!</h2>
+      <h2 id="thank-you-title">Demostración completada</h2>
 
       <p>
-        Tu interés y colaboración son fundamentales para continuar difundiendo
-        la historia de Vareia.
+        No se ha realizado ningún cobro ni se ha enviado información.
       </p>
 
       <p id="thank-you-amount" class="donate-thank-you__amount"></p>
@@ -585,6 +623,11 @@
 
         <div class="footer__bottom">
           <span>Patrimonio arqueológico de Vareia</span>
+          <nav class="footer__nav" aria-label="Información legal">
+            <a href="privacidad.html">Privacidad</a>
+            <a href="cookies.html">Cookies</a>
+            <a href="condiciones.html">Condiciones</a>
+          </nav>
           <span>© 2026 LudoVareia</span>
         </div>
       </div>

@@ -12,6 +12,19 @@
       name="description"
       content="Explora la arquitectura y los espacios construidos del mundo romano en Vareia."
     />
+    <link rel="canonical" href="https://ludovareia.vercel.app/html/arquitectura.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="LudoVareia" />
+    <meta property="og:title" content="Arquitectura | LudoVareia" />
+    <meta property="og:description" content="Explora la arquitectura y los espacios construidos del mundo romano en Vareia." />
+    <meta property="og:url" content="https://ludovareia.vercel.app/html/arquitectura.html" />
+    <meta property="og:image" content="https://ludovareia.vercel.app/img/vareiaStart.png" />
+    <meta property="og:image:alt" content="Reconstrucción del antiguo asentamiento romano de Vareia" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Arquitectura | LudoVareia" />
+    <meta name="twitter:description" content="Explora la arquitectura y los espacios construidos del mundo romano en Vareia." />
+    <meta name="twitter:image" content="https://ludovareia.vercel.app/img/vareiaStart.png" />
 
     <meta
       name="keywords"
@@ -29,6 +42,7 @@
   </head>
 
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
     <!-- =====================================================
        HEADER
        ===================================================== -->
@@ -49,10 +63,16 @@
           ◆ ◇ ◆ ◇ ◆ ◇ ◆
         </div>
 
-        <a href="#" id="donate-button" class="site-header__donate">
-          <span>Apoya el proyecto</span>
+        <button
+          type="button"
+          id="donate-button"
+          class="site-header__donate"
+          aria-haspopup="dialog"
+          aria-controls="donate-popup"
+        >
+          <span>Donación de prueba</span>
           <span aria-hidden="true">→</span>
-        </a>
+        </button>
       </div>
     </header>
 
@@ -67,7 +87,7 @@
           <a
             href="hallazgos.html"
             class="navbar__link is-active"
-            aria-current="page"
+            aria-current="location"
             >Hallazgos</a
           >
           <a href="galeria.html" class="navbar__link">Galería</a>
@@ -81,7 +101,7 @@
        MAIN
        ===================================================== -->
 
-    <main>
+    <main id="contenido" tabindex="-1">
       <section class="detail-intro">
         <div class="container">
           <a href="hallazgos.html" class="detail-intro__back"
@@ -243,17 +263,17 @@
 
         <div class="donate-popup__ornament" aria-hidden="true">◆</div>
 
-        <h2 id="donate-title">Ayúdanos a preservar Vareia</h2>
+        <h2 id="donate-title">Demostración de donación</h2>
 
         <p id="donate-description">
-          Tu aportación ayuda a mantener vivo este proyecto educativo y a
-          divulgar la historia del patrimonio romano de La Rioja.
+          Este prototipo no acepta donaciones. Puedes probar la interfaz, pero no
+          se realizará ningún cobro ni se enviarán datos.
         </p>
       </div>
 
       <form id="donation-form">
         <fieldset class="donate-amounts">
-          <legend>Selecciona la cantidad que deseas aportar</legend>
+          <legend>Selecciona un importe de prueba</legend>
 
           <div class="donate-amounts__grid">
             <button
@@ -295,7 +315,7 @@
         </fieldset>
 
         <div class="donate-custom">
-          <label for="donation-amount"> O introduce otra cantidad (€) </label>
+          <label for="donation-amount"> O introduce otro importe de prueba (€) </label>
 
           <input
             type="number"
@@ -313,18 +333,18 @@
         </div>
 
         <div class="donate-summary">
-          <span>Tu aportación</span>
+          <span>Importe de prueba</span>
           <strong id="donation-summary" aria-live="polite" aria-atomic="true"
             >5,00 €</strong
           >
         </div>
 
         <button type="submit" class="donate-submit">
-          Continuar con la aportación
+          Finalizar demostración
           <span aria-hidden="true">→</span>
         </button>
 
-        <p class="donate-popup__note">Aportación puntual · Sin compromiso</p>
+        <p class="donate-popup__note">No se realizará ningún cobro.</p>
       </form>
     </section>
 
@@ -351,11 +371,10 @@
 
       <span class="donate-popup__eyebrow"> LUDOVAREIA · GRACIAS </span>
 
-      <h2 id="thank-you-title">¡Gracias por tu apoyo!</h2>
+      <h2 id="thank-you-title">Demostración completada</h2>
 
       <p>
-        Tu interés y colaboración son fundamentales para continuar difundiendo
-        la historia de Vareia.
+        No se ha realizado ningún cobro ni se ha enviado información.
       </p>
 
       <p id="thank-you-amount" class="donate-thank-you__amount"></p>
@@ -411,6 +430,11 @@
 
         <div class="footer__bottom">
           <span>Patrimonio arqueológico de Vareia</span>
+          <nav class="footer__nav" aria-label="Información legal">
+            <a href="privacidad.html">Privacidad</a>
+            <a href="cookies.html">Cookies</a>
+            <a href="condiciones.html">Condiciones</a>
+          </nav>
           <span>© 2026 LudoVareia</span>
         </div>
       </div>

@@ -1,8 +1,12 @@
 const activityId = new URLSearchParams(window.location.search).get("id");
 const selectedActivity = window.activities.find((activity) => activity.id === activityId);
 const registrationForm = document.getElementById("registration-form");
+const activityLayout = document.querySelector(".activity-layout");
+const robotsMeta = document.querySelector('meta[name="robots"]');
 
 if (!selectedActivity) {
+	document.title = "Actividad no disponible | LudoVareia";
+	robotsMeta?.setAttribute("content", "noindex,follow");
 	document.getElementById("activity-detail").innerHTML = `
 		<div class="activity-detail__content">
 			<p class="eyebrow">LudoVareia · Actividades</p>
@@ -10,9 +14,34 @@ if (!selectedActivity) {
 			<p class="activity-detail__description">No encontramos esta actividad. Consulta el calendario para ver las propuestas programadas.</p>
 			<a class="btn btn--primary" href="actividades.html">Ver actividades <span aria-hidden="true">→</span></a>
 		</div>`;
-	registrationForm.hidden = true;
+	activityLayout.classList.add("activity-layout--unavailable");
+	registrationForm.closest(".registration-section").hidden = true;
+	document.querySelector(".activity-layout__reviews").hidden = true;
 } else {
 	document.title = `${selectedActivity.title} | LudoVareia`;
+	robotsMeta?.setAttribute("content", "index,follow");
+
+	const canonicalUrl = new URL("https://ludovareia.vercel.app/html/actividad-detalle.html");
+	canonicalUrl.searchParams.set("id", selectedActivity.id);
+
+	let canonicalLink = document.querySelector('link[rel="canonical"]');
+	if (!canonicalLink) {
+		canonicalLink = document.createElement("link");
+		canonicalLink.rel = "canonical";
+		document.head.append(canonicalLink);
+	}
+	canonicalLink.href = canonicalUrl.href;
+
+	document.querySelector('meta[name="description"]')?.setAttribute("content", selectedActivity.description);
+	document.querySelector('meta[property="og:title"]')?.setAttribute("content", document.title);
+	document.querySelector('meta[property="og:description"]')?.setAttribute("content", selectedActivity.description);
+	document.querySelector('meta[property="og:url"]')?.setAttribute("content", canonicalUrl.href);
+	document.querySelector('meta[property="og:image:alt"]')?.setAttribute("content", selectedActivity.alt);
+	document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", document.title);
+	document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", selectedActivity.description);
+	const socialImage = new URL(selectedActivity.image, "https://ludovareia.vercel.app/html/actividad-detalle.html");
+	document.querySelector('meta[property="og:image"]')?.setAttribute("content", socialImage.href);
+	document.querySelector('meta[name="twitter:image"]')?.setAttribute("content", socialImage.href);
 	document.getElementById("activity-image").src = selectedActivity.image;
 	document.getElementById("activity-image").alt = selectedActivity.alt;
 	document.getElementById("activity-category").textContent = selectedActivity.category;
@@ -55,7 +84,7 @@ registrationForm.addEventListener("submit", (event) => {
 	}
 
 	const message = document.getElementById("registration-message");
-	message.textContent = `¡Listo, ${registration.name}! Tu solicitud para «${selectedActivity.title}» se ha guardado en este dispositivo.`;
+	message.textContent = `Demostración guardada en este dispositivo. No se ha enviado ni reservado plaza para «${selectedActivity.title}».`;
 	message.hidden = false;
 	registrationForm.reset();
 	document.getElementById("registration-activity").value = selectedActivity.id;

@@ -71,6 +71,27 @@ if (lightbox) {
     if (event.key === "Escape") closeLightbox();
     if (event.key === "ArrowLeft") showImage(currentIndex - 1);
     if (event.key === "ArrowRight") showImage(currentIndex + 1);
+
+    if (event.key === "Tab") {
+      const focusableElements = [
+        ...lightbox.querySelectorAll(
+          'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      ];
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (!lightbox.contains(document.activeElement)) {
+        event.preventDefault();
+        (event.shiftKey ? lastElement : firstElement).focus();
+      } else if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
+    }
   });
 
   const requestedImage = Number(

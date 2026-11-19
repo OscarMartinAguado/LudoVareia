@@ -10,14 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const openPopup = document.getElementById("open-review-popup");
   const closePopup = document.getElementById("close-review-popup");
+  let previousFocus = null;
 
   // ABRIR POPUP
 
   function showReviewPopup() {
+    previousFocus = document.activeElement;
     popup.hidden = false;
     overlay.hidden = false;
 
-    document.getElementById("review-name").focus();
+    closePopup.focus();
 
     document.body.style.overflow = "hidden";
   }
@@ -30,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.style.overflow = "";
 
-    openPopup.focus();
+    previousFocus?.focus();
   }
 
   // EVENTOS
@@ -41,11 +43,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   overlay.addEventListener("click", hideReviewPopup);
 
-  // CERRAR CON ESCAPE
-
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !popup.hidden) {
+    if (popup.hidden) return;
+
+    if (event.key === "Escape") {
       hideReviewPopup();
+      return;
+    }
+
+    if (event.key === "Tab") {
+      const focusableElements = [
+        ...popup.querySelectorAll(
+          'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      ];
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (!popup.contains(document.activeElement)) {
+        event.preventDefault();
+        (event.shiftKey ? lastElement : firstElement).focus();
+      } else if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
     }
   });
 
@@ -55,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const activity = params.get("id");
 
   if (!activity) {
-    console.error("No se ha encontrado el identificador de la actividad.");
     return;
   }
 
@@ -213,7 +236,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Confirmación
-    message.textContent = "¡Gracias por compartir tu experiencia!";
+    message.textContent =
+      "Reseña guardada en este navegador; no se ha compartido con otras personas.";
 
     // Limpiar formulario
     form.reset();
