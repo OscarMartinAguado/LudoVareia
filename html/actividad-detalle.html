@@ -433,8 +433,17 @@
             <button
               type="button"
               class="donate-amount"
-              data-amount="5"
+              data-amount="1"
               aria-pressed="false"
+            >
+              1 €
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount is-selected"
+              data-amount="5"
+              aria-pressed="true"
             >
               5 €
             </button>
@@ -442,38 +451,19 @@
             <button
               type="button"
               class="donate-amount"
-              data-amount="10"
+              data-amount="15"
               aria-pressed="false"
             >
-              10 €
-            </button>
-
-            <button
-              type="button"
-              class="donate-amount is-selected"
-              data-amount="20"
-              aria-pressed="true"
-            >
-              20 €
-              <span>Popular</span>
+              15 €
             </button>
 
             <button
               type="button"
               class="donate-amount"
-              data-amount="50"
+              data-amount="30"
               aria-pressed="false"
             >
-              50 €
-            </button>
-
-            <button
-              type="button"
-              class="donate-amount"
-              data-amount="100"
-              aria-pressed="false"
-            >
-              100 €
+              30 €
             </button>
           </div>
         </fieldset>
@@ -485,20 +475,22 @@
             type="number"
             id="donation-amount"
             min="1"
-            max="500"
+            max="50"
             step="0.01"
             placeholder="Ej. 15"
             inputmode="decimal"
           />
 
           <p class="donate-custom__help">
-            Puedes elegir cualquier cantidad entre 1 € y 500 €.
+            Puedes elegir cualquier cantidad entre 1 € y 50 €.
           </p>
         </div>
 
         <div class="donate-summary">
           <span>Tu aportación</span>
-          <strong id="donation-summary">20,00 €</strong>
+          <strong id="donation-summary" aria-live="polite" aria-atomic="true"
+            >5,00 €</strong
+          >
         </div>
 
         <button type="submit" class="donate-submit">
