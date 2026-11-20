@@ -2412,19 +2412,34 @@ a.feature-card {
 }
 
 .footer__icons button {
-  width: 23px;
-  height: 23px;
-
+  width: 36px;
+  height: 36px;
   padding: 0;
 
   border: 0;
-
   background: transparent;
+  color: #f6ecdd;
 
-  /*color: #f6ecdd;*/
-  color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  font-size: 14px;
+  cursor: pointer;
+}
+
+.footer__icons button svg {
+  width: 26px;
+  height: 26px;
+
+  display: block;
+  flex-shrink: 0;
+
+  /* ESTILOS DEL SVG */
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* PIE */

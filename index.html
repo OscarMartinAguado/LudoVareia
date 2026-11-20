@@ -224,6 +224,7 @@
           <img
             src="img/vareiaStart.png"
             alt="Reconstrucción del antiguo asentamiento romano de Vareia"
+            fetchpriority="high"
           />
         </div>
       </section>
@@ -241,13 +242,11 @@
             <a href="html/historia.html" class="feature-card">
               <div class="feature-card__icon">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 20h14" />
-                  <path d="M7 20V8h10v12" />
-                  <path d="M4 8h16" />
-                  <path d="M8 5h8" />
-                  <path d="M9 11v5" />
-                  <path d="M12 11v5" />
-                  <path d="M15 11v5" />
+                  <path
+                    d="M5 4.5A2.5 2.5 0 0 1 7.5 2H20v18H7.5A2.5 2.5 0 0 1 5 17.5z"
+                  />
+                  <path d="M5 5h15M5 17h15M8 8h9M8 11h7M8 14h9" />
+                  <path d="M5 4.5v13" />
                 </svg>
               </div>
 
@@ -272,14 +271,7 @@
                   <path d="M7 7h10" />
 
                   <path
-                    d="
-                    M6 10
-                    c0-2 2-3 6-3
-                    s6 1 6 3
-                    v7
-                    c0 2-2 3-6 3
-                    s-6-1-6-3z
-                  "
+                    d="M6 10 c0-2 2-3 6-3 s6 1 6 3 v7 c0 2-2 3-6 3 s-6-1-6-3z"
                   />
 
                   <path d="M9 11h6" />
@@ -442,8 +434,8 @@
         <h2 id="donate-title">Demostración de donación</h2>
 
         <p id="donate-description">
-          Este prototipo no acepta donaciones. Puedes probar la interfaz, pero no
-          se realizará ningún cobro ni se enviarán datos.
+          Este prototipo no acepta donaciones. Puedes probar la interfaz, pero
+          no se realizará ningún cobro ni se enviarán datos.
         </p>
       </div>
 
@@ -491,7 +483,9 @@
         </fieldset>
 
         <div class="donate-custom">
-          <label for="donation-amount"> O introduce otro importe de prueba (€) </label>
+          <label for="donation-amount">
+            O introduce otro importe de prueba (€)
+          </label>
 
           <input
             type="number"
@@ -549,9 +543,7 @@
 
       <h2 id="thank-you-title">Demostración completada</h2>
 
-      <p>
-        No se ha realizado ningún cobro ni se ha enviado información.
-      </p>
+      <p>No se ha realizado ningún cobro ni se ha enviado información.</p>
 
       <p id="thank-you-amount" class="donate-thank-you__amount"></p>
 
@@ -601,7 +593,11 @@
               aria-haspopup="dialog"
               aria-controls="map-modal"
             >
-              ◫
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z" />
+                <path d="M9 3v15M15 6v15" />
+                <path d="M5.5 9h1M11 8h2M17 10h2" />
+              </svg>
             </button>
           </div>
         </div>
@@ -645,8 +641,8 @@
         <h2 id="map-modal-title">La antigua ciudad romana</h2>
 
         <p class="map-modal__description">
-          Explora el plano de reconstrucción de Vareia y descubre cómo pudo ser
-          el asentamiento en época romana.
+          Plano de reconstrucción de Vareia. Descubre cómo pudo ser el
+          asentamiento en época romana.
         </p>
 
         <div class="map-modal__image-container">
