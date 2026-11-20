@@ -55,7 +55,7 @@
 
     <meta
       property="og:image"
-      content="https://ludovareia.vercel.app/img/vareiaStart.png"
+      content="https://ludovareia.vercel.app/img/vareiaStart.jpg"
     />
 
     <meta
@@ -65,7 +65,7 @@
 
     <meta
       name="twitter:image"
-      content="https://ludovareia.vercel.app/img/vareiaStart.png"
+      content="https://ludovareia.vercel.app/img/vareiaStart.jpg"
     />
 
     <meta
@@ -222,8 +222,16 @@
 
         <div class="hero__media">
           <img
-            src="img/vareiaStart.png"
+            src="img/vareiaStart-960.jpg"
+            srcset="
+              img/vareiaStart-480.jpg 480w,
+              img/vareiaStart-960.jpg 960w,
+              img/vareiaStart.jpg 1376w
+            "
+            sizes="(max-width: 950px) 100vw, 64vw"
             alt="Reconstrucción del antiguo asentamiento romano de Vareia"
+            width="1376"
+            height="768"
             fetchpriority="high"
           />
         </div>
@@ -330,6 +338,10 @@
                 <img
                   src="img/galeria/galeria-mosaico.png"
                   alt="Mosaico romano de Vareia"
+                  width="546"
+                  height="366"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
 
@@ -337,6 +349,10 @@
                 <img
                   src="img/galeria/galeria-ciudad.png"
                   alt="Reconstrucción de la ciudad romana de Vareia"
+                  width="259"
+                  height="194"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
 
@@ -344,13 +360,21 @@
                 <img
                   src="img/galeria/galeria-ceramica.png"
                   alt="Pieza de cerámica arqueológica"
+                  width="606"
+                  height="330"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
 
               <a href="html/galeria.html?imagen=3" class="gallery__item">
                 <img
-                  src="img/galeria/galeria-paisaje.png"
+                  src="img/galeria/galeria-paisaje-home.jpg"
                   alt="Paisaje del entorno arqueológico de Vareia"
+                  width="640"
+                  height="358"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
             </div>
@@ -647,9 +671,11 @@
 
         <div class="map-modal__image-container">
           <img
-            src="img/plano-vareia.png"
+            data-src="img/plano-vareia-web.jpg"
             alt="Plano de reconstrucción de la antigua ciudad romana de Vareia"
             class="map-modal__image"
+            width="1024"
+            height="572"
           />
         </div>
 

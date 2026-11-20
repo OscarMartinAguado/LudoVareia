@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!modal || !trigger) return;
 
+  const mapImage = modal.querySelector(".map-modal__image");
   const closeButton = modal.querySelector(".map-modal__close");
   const closeElements = modal.querySelectorAll("[data-map-close]");
   const pageElements = [...document.body.children].filter(
@@ -18,6 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
     pageElements.forEach((element) => {
       element.inert = true;
     });
+    if (mapImage && mapImage.dataset.src && !mapImage.hasAttribute("src")) {
+      mapImage.src = mapImage.dataset.src;
+    }
     modal.hidden = false;
     document.body.style.overflow = "hidden";
     closeButton.focus();
