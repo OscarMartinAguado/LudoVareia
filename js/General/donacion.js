@@ -71,7 +71,7 @@ amountInput.addEventListener("input", () => {
   const amount = Number(amountInput.value);
 
   if (amountInput.value === "") {
-    updateAmount(20);
+    updateAmount(5);
     return;
   }
 
@@ -135,7 +135,7 @@ donateButton.addEventListener("click", (e) => {
   e.preventDefault();
 
   amountInput.value = "";
-  updateAmount(20);
+  updateAmount(5);
 
   openPopup(donatePopup);
 });
