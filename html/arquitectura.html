@@ -55,6 +55,7 @@
     <link rel="stylesheet" href="../css/General/style.css" />
 
     <script src="../js/Hallazgos/hallazgos.js" defer></script>
+    <script src="../js/Hallazgos/catalogo.js" defer></script>
     <script src="../js/General/mapa.js" defer></script>
     <script src="../js/General/donacion.js" defer></script>
   </head>
@@ -171,81 +172,148 @@
             <p>Pulsa sobre una imagen para consultar su ficha.</p>
           </div>
 
-          <div class="artifact-grid">
-            <button
-              class="artifact-card"
-              type="button"
-              data-title="Horreum romano"
-              data-category="Almacenamiento"
-              data-image="../img/hallazgos/arquitectura/campamento-romano.png"
-              data-alt="Ejemplo ilustrativo de un horreum romano"
-              data-description="Un horreum era un edificio o espacio destinado al almacenamiento. En el mundo romano podía utilizarse para guardar productos agrícolas, alimentos y otras mercancías."
-              data-context="Su identificación arqueológica requiere analizar los restos constructivos, su distribución y el contexto del hallazgo. Esta imagen es ilustrativa y no confirma por sí misma que exista un horreum excavado en Vareia."
-            >
-              <img
-                class="artifact-card__image"
-                src="../img/hallazgos/arquitectura/campamento-romano.png"
-                alt="Ejemplo ilustrativo de un horreum romano"
-              />
-              <span class="artifact-card__body">
-                <span class="artifact-card__category">Almacenamiento</span>
-                <span class="artifact-card__title">El horreum</span>
-                <span class="artifact-card__description">
-                  Edificios romanos para guardar productos y mercancías.
-                </span>
-                <span class="artifact-card__more">Ver ficha →</span>
-              </span>
-            </button>
+          <!-- FILTROS DEL CATÁLOGO -->
+          <div class="artifact-catalog">
+            <div class="catalog-controls">
+              <div class="catalog-search">
+                <label for="objectSearch">Buscar estructuras</label>
 
-            <button
-              class="artifact-card"
-              type="button"
-              data-title="Estructuras y muros"
-              data-category="Construcción"
-              data-image="../img/hallazgos/arquitectura/campamento-romano.png"
-              data-alt="Ejemplo ilustrativo de restos constructivos romanos"
-              data-description="Los muros, los cimientos y los pavimentos permiten investigar los materiales y las técnicas utilizadas en la construcción de edificios romanos."
-              data-context="La relación entre las estructuras, los objetos recuperados y los estratos arqueológicos ayuda a interpretar las distintas fases de ocupación de un yacimiento."
-            >
-              <img
-                class="artifact-card__image"
-                src="../img/hallazgos/arquitectura/campamento-romano.png"
-                alt="Ejemplo ilustrativo de estructuras romanas"
-              />
-              <span class="artifact-card__body">
-                <span class="artifact-card__category">Construcción</span>
-                <span class="artifact-card__title">Muros y estructuras</span>
-                <span class="artifact-card__description">
-                  Huellas materiales de los edificios antiguos.
-                </span>
-                <span class="artifact-card__more">Ver ficha →</span>
-              </span>
-            </button>
+                <input
+                  type="search"
+                  id="objectSearch"
+                  placeholder="Buscar una estructura..."
+                  autocomplete="off"
+                />
+              </div>
 
-            <button
-              class="artifact-card"
-              type="button"
-              data-title="Espacios habitados"
-              data-category="Urbanismo"
-              data-image="../img/hallazgos/arquitectura/campamento-romano.png"
-              data-alt="Ejemplo ilustrativo de un espacio arquitectónico romano"
-              data-description="Los espacios construidos podían tener funciones domésticas, artesanales, comerciales o públicas. Su distribución ofrece información sobre la organización del asentamiento."
-              data-context="La función de cada espacio debe establecerse a partir de la evidencia arqueológica disponible y no únicamente por su parecido con edificios de otros lugares."
-            >
-              <img
-                class="artifact-card__image"
-                src="../img/hallazgos/arquitectura/campamento-romano.png"
-                alt="Ejemplo ilustrativo de arquitectura romana"
-              />
-              <span class="artifact-card__body">
-                <span class="artifact-card__category">Urbanismo</span>
-                <span class="artifact-card__title">Espacios habitados</span>
-                <span class="artifact-card__description">
-                  La organización de los edificios y sus funciones.
+              <div
+                class="catalog-filters"
+                role="group"
+                aria-label="Filtrar por categoría"
+              >
+                <button
+                  type="button"
+                  class="catalog-filter is-active"
+                  data-filter="todos"
+                  aria-pressed="true"
+                >
+                  Todos
+                </button>
+
+                <button
+                  type="button"
+                  class="catalog-filter"
+                  data-filter="Almacenamiento"
+                  aria-pressed="false"
+                >
+                  Almacenamiento
+                </button>
+
+                <button
+                  type="button"
+                  class="catalog-filter"
+                  data-filter="Construcción"
+                  aria-pressed="false"
+                >
+                  Construcción
+                </button>
+
+                <button
+                  type="button"
+                  class="catalog-filter"
+                  data-filter="Urbanismo"
+                  aria-pressed="false"
+                >
+                  Urbanismo
+                </button>
+              </div>
+
+              <p class="catalog-results" aria-live="polite" aria-atomic="true">
+                Estructuras encontradas:
+                <strong id="objectCount">3</strong>
+              </p>
+            </div>
+
+            <p class="catalog-empty" id="catalogEmpty" role="status" hidden>
+              No se han encontrado estructuras con esos criterios.
+            </p>
+
+            <div class="artifact-grid">
+              <button
+                class="artifact-card"
+                type="button"
+                data-title="Horreum romano"
+                data-category="Almacenamiento"
+                data-image="../img/hallazgos/arquitectura/campamento-romano.png"
+                data-alt="Ejemplo ilustrativo de un horreum romano"
+                data-description="Un horreum era un edificio o espacio destinado al almacenamiento. En el mundo romano podía utilizarse para guardar productos agrícolas, alimentos y otras mercancías."
+                data-context="Su identificación arqueológica requiere analizar los restos constructivos, su distribución y el contexto del hallazgo. Esta imagen es ilustrativa y no confirma por sí misma que exista un horreum excavado en Vareia."
+              >
+                <img
+                  class="artifact-card__image"
+                  src="../img/hallazgos/arquitectura/campamento-romano.png"
+                  alt="Ejemplo ilustrativo de un horreum romano"
+                />
+                <span class="artifact-card__body">
+                  <span class="artifact-card__category">Almacenamiento</span>
+                  <span class="artifact-card__title">El horreum</span>
+                  <span class="artifact-card__description">
+                    Edificios romanos para guardar productos y mercancías.
+                  </span>
+                  <span class="artifact-card__more">Ver ficha →</span>
                 </span>
-                <span class="artifact-card__more">Ver ficha →</span>
-              </span>
-            </button>
+              </button>
+
+              <button
+                class="artifact-card"
+                type="button"
+                data-title="Estructuras y muros"
+                data-category="Construcción"
+                data-image="../img/hallazgos/arquitectura/campamento-romano.png"
+                data-alt="Ejemplo ilustrativo de restos constructivos romanos"
+                data-description="Los muros, los cimientos y los pavimentos permiten investigar los materiales y las técnicas utilizadas en la construcción de edificios romanos."
+                data-context="La relación entre las estructuras, los objetos recuperados y los estratos arqueológicos ayuda a interpretar las distintas fases de ocupación de un yacimiento."
+              >
+                <img
+                  class="artifact-card__image"
+                  src="../img/hallazgos/arquitectura/campamento-romano.png"
+                  alt="Ejemplo ilustrativo de estructuras romanas"
+                />
+                <span class="artifact-card__body">
+                  <span class="artifact-card__category">Construcción</span>
+                  <span class="artifact-card__title">Muros y estructuras</span>
+                  <span class="artifact-card__description">
+                    Huellas materiales de los edificios antiguos.
+                  </span>
+                  <span class="artifact-card__more">Ver ficha →</span>
+                </span>
+              </button>
+
+              <button
+                class="artifact-card"
+                type="button"
+                data-title="Espacios habitados"
+                data-category="Urbanismo"
+                data-image="../img/hallazgos/arquitectura/campamento-romano.png"
+                data-alt="Ejemplo ilustrativo de un espacio arquitectónico romano"
+                data-description="Los espacios construidos podían tener funciones domésticas, artesanales, comerciales o públicas. Su distribución ofrece información sobre la organización del asentamiento."
+                data-context="La función de cada espacio debe establecerse a partir de la evidencia arqueológica disponible y no únicamente por su parecido con edificios de otros lugares."
+              >
+                <img
+                  class="artifact-card__image"
+                  src="../img/hallazgos/arquitectura/campamento-romano.png"
+                  alt="Ejemplo ilustrativo de arquitectura romana"
+                />
+                <span class="artifact-card__body">
+                  <span class="artifact-card__category">Urbanismo</span>
+                  <span class="artifact-card__title">Espacios habitados</span>
+                  <span class="artifact-card__description">
+                    La organización de los edificios y sus funciones.
+                  </span>
+                  <span class="artifact-card__more">Ver ficha →</span>
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </section>

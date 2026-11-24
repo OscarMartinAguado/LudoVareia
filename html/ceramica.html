@@ -51,6 +51,7 @@
     <link rel="stylesheet" href="../css/General/style.css" />
 
     <script src="../js/Hallazgos/hallazgos.js" defer></script>
+    <script src="../js/Hallazgos/catalogo.js" defer></script>
     <script src="../js/General/mapa.js" defer></script>
     <script src="../js/General/donacion.js" defer></script>
   </head>
@@ -167,81 +168,148 @@
             <p>Pulsa sobre una imagen para abrir su ficha informativa.</p>
           </div>
 
-          <div class="artifact-grid">
-            <button
-              class="artifact-card"
-              type="button"
-              data-title="Dolia romana"
-              data-category="Almacenamiento"
-              data-image="../img/hallazgos/ceramica/cuenco-ceramica.png"
-              data-alt="Ejemplo de una gran dolia romana"
-              data-description="Las dolia eran grandes recipientes cerámicos utilizados para almacenar productos como cereales, vino o aceite, según el contexto y las características de cada pieza."
-              data-context="En un asentamiento romano, este tipo de recipiente ayuda a estudiar el almacenamiento y la gestión de alimentos. Para atribuir una dolia concreta a Vareia es necesario verificar su procedencia arqueológica."
-            >
-              <img
-                class="artifact-card__image"
-                src="../img/hallazgos/ceramica/cuenco-ceramica.png"
-                alt="Ejemplo ilustrativo de una dolia romana"
-              />
-              <span class="artifact-card__body">
-                <span class="artifact-card__category">Almacenamiento</span>
-                <span class="artifact-card__title">Dolia</span>
-                <span class="artifact-card__description">
-                  Grandes recipientes para guardar productos.
-                </span>
-                <span class="artifact-card__more">Ver ficha →</span>
-              </span>
-            </button>
+          <!-- FILTROS DEL CATÁLOGO -->
+          <div class="artifact-catalog">
+            <div class="catalog-controls">
+              <div class="catalog-search">
+                <label for="objectSearch">Buscar objetos</label>
 
-            <button
-              class="artifact-card"
-              type="button"
-              data-title="Vasija romana"
-              data-category="Uso doméstico"
-              data-image="../img/hallazgos/ceramica/cuenco-ceramica.png"
-              data-alt="Ejemplo de vasija cerámica romana"
-              data-description="Las vasijas romanas presentaban formas y tamaños diversos. Podían utilizarse para contener, preparar, servir o conservar alimentos y líquidos."
-              data-context="La forma, la pasta cerámica, la decoración y las huellas de uso pueden ayudar a los especialistas a interpretar la función de una pieza. La identificación concreta depende de su estudio arqueológico."
-            >
-              <img
-                class="artifact-card__image"
-                src="../img/hallazgos/ceramica/cuenco-ceramica.png"
-                alt="Ejemplo ilustrativo de una vasija romana"
-              />
-              <span class="artifact-card__body">
-                <span class="artifact-card__category">Uso doméstico</span>
-                <span class="artifact-card__title">Vasijas</span>
-                <span class="artifact-card__description">
-                  Recipientes para distintas tareas cotidianas.
-                </span>
-                <span class="artifact-card__more">Ver ficha →</span>
-              </span>
-            </button>
+                <input
+                  type="search"
+                  id="objectSearch"
+                  placeholder="Buscar una pieza..."
+                  autocomplete="off"
+                />
+              </div>
 
-            <button
-              class="artifact-card"
-              type="button"
-              data-title="Cerámica de uso cotidiano"
-              data-category="Vida doméstica"
-              data-image="../img/hallazgos/ceramica/cuenco-ceramica.png"
-              data-alt="Ejemplo ilustrativo de cerámica romana"
-              data-description="Platos, cuencos, jarras y otros recipientes formaban parte de las actividades cotidianas. Algunos eran de fabricación sencilla y otros tenían acabados más elaborados."
-              data-context="La comparación de tipos cerámicos permite investigar los hábitos de consumo, las técnicas artesanales y la circulación de productos en época romana."
-            >
-              <img
-                class="artifact-card__image"
-                src="../img/hallazgos/ceramica/cuenco-ceramica.png"
-                alt="Ejemplo ilustrativo de recipientes cerámicos romanos"
-              />
-              <span class="artifact-card__body">
-                <span class="artifact-card__category">Vida doméstica</span>
-                <span class="artifact-card__title">Cerámica cotidiana</span>
-                <span class="artifact-card__description">
-                  Objetos para comer, beber y cocinar.
+              <div
+                class="catalog-filters"
+                role="group"
+                aria-label="Filtrar por categoría"
+              >
+                <button
+                  type="button"
+                  class="catalog-filter is-active"
+                  data-filter="todos"
+                  aria-pressed="true"
+                >
+                  Todos
+                </button>
+
+                <button
+                  type="button"
+                  class="catalog-filter"
+                  data-filter="Almacenamiento"
+                  aria-pressed="false"
+                >
+                  Almacenamiento
+                </button>
+
+                <button
+                  type="button"
+                  class="catalog-filter"
+                  data-filter="Uso doméstico"
+                  aria-pressed="false"
+                >
+                  Uso doméstico
+                </button>
+
+                <button
+                  type="button"
+                  class="catalog-filter"
+                  data-filter="Vida doméstica"
+                  aria-pressed="false"
+                >
+                  Vida doméstica
+                </button>
+              </div>
+
+              <p class="catalog-results" aria-live="polite" aria-atomic="true">
+                Objetos encontrados:
+                <strong id="objectCount">3</strong>
+              </p>
+            </div>
+
+            <p class="catalog-empty" id="catalogEmpty" role="status" hidden>
+              No se han encontrado objetos con esos criterios.
+            </p>
+
+            <div class="artifact-grid">
+              <button
+                class="artifact-card"
+                type="button"
+                data-title="Dolia romana"
+                data-category="Almacenamiento"
+                data-image="../img/hallazgos/ceramica/cuenco-ceramica.png"
+                data-alt="Ejemplo de una gran dolia romana"
+                data-description="Las dolia eran grandes recipientes cerámicos utilizados para almacenar productos como cereales, vino o aceite, según el contexto y las características de cada pieza."
+                data-context="En un asentamiento romano, este tipo de recipiente ayuda a estudiar el almacenamiento y la gestión de alimentos. Para atribuir una dolia concreta a Vareia es necesario verificar su procedencia arqueológica."
+              >
+                <img
+                  class="artifact-card__image"
+                  src="../img/hallazgos/ceramica/cuenco-ceramica.png"
+                  alt="Ejemplo ilustrativo de una dolia romana"
+                />
+                <span class="artifact-card__body">
+                  <span class="artifact-card__category">Almacenamiento</span>
+                  <span class="artifact-card__title">Dolia</span>
+                  <span class="artifact-card__description">
+                    Grandes recipientes para guardar productos.
+                  </span>
+                  <span class="artifact-card__more">Ver ficha →</span>
                 </span>
-                <span class="artifact-card__more">Ver ficha →</span>
-              </span>
-            </button>
+              </button>
+
+              <button
+                class="artifact-card"
+                type="button"
+                data-title="Vasija romana"
+                data-category="Uso doméstico"
+                data-image="../img/hallazgos/ceramica/cuenco-ceramica.png"
+                data-alt="Ejemplo de vasija cerámica romana"
+                data-description="Las vasijas romanas presentaban formas y tamaños diversos. Podían utilizarse para contener, preparar, servir o conservar alimentos y líquidos."
+                data-context="La forma, la pasta cerámica, la decoración y las huellas de uso pueden ayudar a los especialistas a interpretar la función de una pieza. La identificación concreta depende de su estudio arqueológico."
+              >
+                <img
+                  class="artifact-card__image"
+                  src="../img/hallazgos/ceramica/cuenco-ceramica.png"
+                  alt="Ejemplo ilustrativo de una vasija romana"
+                />
+                <span class="artifact-card__body">
+                  <span class="artifact-card__category">Uso doméstico</span>
+                  <span class="artifact-card__title">Vasijas</span>
+                  <span class="artifact-card__description">
+                    Recipientes para distintas tareas cotidianas.
+                  </span>
+                  <span class="artifact-card__more">Ver ficha →</span>
+                </span>
+              </button>
+
+              <button
+                class="artifact-card"
+                type="button"
+                data-title="Cerámica de uso cotidiano"
+                data-category="Vida doméstica"
+                data-image="../img/hallazgos/ceramica/cuenco-ceramica.png"
+                data-alt="Ejemplo ilustrativo de cerámica romana"
+                data-description="Platos, cuencos, jarras y otros recipientes formaban parte de las actividades cotidianas. Algunos eran de fabricación sencilla y otros tenían acabados más elaborados."
+                data-context="La comparación de tipos cerámicos permite investigar los hábitos de consumo, las técnicas artesanales y la circulación de productos en época romana."
+              >
+                <img
+                  class="artifact-card__image"
+                  src="../img/hallazgos/ceramica/cuenco-ceramica.png"
+                  alt="Ejemplo ilustrativo de recipientes cerámicos romanos"
+                />
+                <span class="artifact-card__body">
+                  <span class="artifact-card__category">Vida doméstica</span>
+                  <span class="artifact-card__title">Cerámica cotidiana</span>
+                  <span class="artifact-card__description">
+                    Objetos para comer, beber y cocinar.
+                  </span>
+                  <span class="artifact-card__more">Ver ficha →</span>
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </section>

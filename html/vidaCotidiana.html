@@ -56,6 +56,7 @@
     <link rel="stylesheet" href="../css/General/style.css" />
 
     <script src="../js/Hallazgos/hallazgos.js" defer></script>
+    <script src="../js/Hallazgos/catalogo.js" defer></script>
     <script src="../js/General/mapa.js" defer></script>
     <script src="../js/General/donacion.js" defer></script>
   </head>
@@ -170,82 +171,150 @@
             <p>Pulsa sobre una imagen para consultar su ficha.</p>
           </div>
 
-          <div class="artifact-grid">
-            <button
-              class="artifact-card"
-              type="button"
-              data-title="Lucerna romana"
-              data-category="Iluminación"
-              data-image="../img/hallazgos/vidaCotidiana/fibula.png"
-              data-alt="Ejemplo ilustrativo de una lucerna romana"
-              data-description="Las lucernas eran lámparas que utilizaban aceite como combustible. Una mecha colocada en su pico permitía producir una llama para iluminar espacios interiores."
-              data-context="Las lucernas podían presentar diferentes formas, decoraciones y marcas de fabricación. Su estudio aporta información sobre la iluminación doméstica y la producción artesanal."
-            >
-              <img
-                class="artifact-card__image"
-                src="../img/hallazgos/vidaCotidiana/fibula.png"
-                alt="Ejemplo ilustrativo de una lucerna romana"
-              />
-              <span class="artifact-card__body">
-                <span class="artifact-card__category">Iluminación</span>
-                <span class="artifact-card__title">Lucernas</span>
-                <span class="artifact-card__description">
-                  Lámparas utilizadas para iluminar los espacios.
-                </span>
-                <span class="artifact-card__more">Ver ficha →</span>
-              </span>
-            </button>
+          <!-- FILTROS DEL CATÁLOGO -->
+          <div class="artifact-catalog">
+            <div class="catalog-controls">
+              <div class="catalog-search">
+                <label for="objectSearch">Buscar objetos</label>
 
-            <button
-              class="artifact-card"
-              type="button"
-              data-title="Utensilios y herramientas"
-              data-category="Trabajo y hogar"
-              data-image="../img/hallazgos/vidaCotidiana/fibula.png"
-              data-alt="Ejemplo ilustrativo de herramientas y utensilios antiguos"
-              data-description="Los utensilios y herramientas podían emplearse en tareas domésticas, trabajos artesanales y actividades agrícolas. Sus materiales y formas dependían de la función para la que estaban destinados."
-              data-context="El contexto arqueológico y las huellas de uso son esenciales para interpretar correctamente cada herramienta y distinguir sus posibles funciones."
-            >
-              <img
-                class="artifact-card__image"
-                src="../img/hallazgos/vidaCotidiana/fibula.png"
-                alt="Ejemplo ilustrativo de herramientas y utensilios romanos"
-              />
-              <span class="artifact-card__body">
-                <span class="artifact-card__category">Trabajo y hogar</span>
-                <span class="artifact-card__title">Utensilios</span>
-                <span class="artifact-card__description">
-                  Herramientas para las tareas de cada día.
-                </span>
-                <span class="artifact-card__more">Ver ficha →</span>
-              </span>
-            </button>
+                <input
+                  type="search"
+                  id="objectSearch"
+                  placeholder="Buscar un objeto..."
+                  autocomplete="off"
+                />
+              </div>
 
-            <button
-              class="artifact-card"
-              type="button"
-              data-title="Recipientes domésticos"
-              data-category="Alimentación"
-              data-image="../img/hallazgos/vidaCotidiana/fibula.png"
-              data-alt="Ejemplo ilustrativo de recipientes de época romana"
-              data-description="Los recipientes se empleaban para preparar, servir y conservar alimentos. La variedad de formas cerámicas refleja las distintas necesidades de la vida doméstica."
-              data-context="El análisis de los restos cerámicos ayuda a estudiar las prácticas alimentarias y las actividades económicas de los asentamientos romanos."
-            >
-              <img
-                class="artifact-card__image"
-                src="../img/hallazgos/vidaCotidiana/fibula.png"
-                alt="Ejemplo ilustrativo de recipientes domésticos romanos"
-              />
-              <span class="artifact-card__body">
-                <span class="artifact-card__category">Alimentación</span>
-                <span class="artifact-card__title">Recipientes domésticos</span>
-                <span class="artifact-card__description">
-                  Objetos relacionados con la preparación y conservación de
-                  alimentos.
+              <div
+                class="catalog-filters"
+                role="group"
+                aria-label="Filtrar por categoría"
+              >
+                <button
+                  type="button"
+                  class="catalog-filter is-active"
+                  data-filter="todos"
+                  aria-pressed="true"
+                >
+                  Todos
+                </button>
+
+                <button
+                  type="button"
+                  class="catalog-filter"
+                  data-filter="Iluminación"
+                  aria-pressed="false"
+                >
+                  Iluminación
+                </button>
+
+                <button
+                  type="button"
+                  class="catalog-filter"
+                  data-filter="Trabajo y hogar"
+                  aria-pressed="false"
+                >
+                  Trabajo y hogar
+                </button>
+
+                <button
+                  type="button"
+                  class="catalog-filter"
+                  data-filter="Alimentación"
+                  aria-pressed="false"
+                >
+                  Alimentación
+                </button>
+              </div>
+
+              <p class="catalog-results" aria-live="polite" aria-atomic="true">
+                Objetos encontrados:
+                <strong id="objectCount">3</strong>
+              </p>
+            </div>
+
+            <p class="catalog-empty" id="catalogEmpty" role="status" hidden>
+              No se han encontrado objetos con esos criterios.
+            </p>
+            <div class="artifact-grid">
+              <button
+                class="artifact-card"
+                type="button"
+                data-title="Lucerna romana"
+                data-category="Iluminación"
+                data-image="../img/hallazgos/vidaCotidiana/fibula.png"
+                data-alt="Ejemplo ilustrativo de una lucerna romana"
+                data-description="Las lucernas eran lámparas que utilizaban aceite como combustible. Una mecha colocada en su pico permitía producir una llama para iluminar espacios interiores."
+                data-context="Las lucernas podían presentar diferentes formas, decoraciones y marcas de fabricación. Su estudio aporta información sobre la iluminación doméstica y la producción artesanal."
+              >
+                <img
+                  class="artifact-card__image"
+                  src="../img/hallazgos/vidaCotidiana/fibula.png"
+                  alt="Ejemplo ilustrativo de una lucerna romana"
+                />
+                <span class="artifact-card__body">
+                  <span class="artifact-card__category">Iluminación</span>
+                  <span class="artifact-card__title">Lucernas</span>
+                  <span class="artifact-card__description">
+                    Lámparas utilizadas para iluminar los espacios.
+                  </span>
+                  <span class="artifact-card__more">Ver ficha →</span>
                 </span>
-                <span class="artifact-card__more">Ver ficha →</span>
-              </span>
-            </button>
+              </button>
+
+              <button
+                class="artifact-card"
+                type="button"
+                data-title="Utensilios y herramientas"
+                data-category="Trabajo y hogar"
+                data-image="../img/hallazgos/vidaCotidiana/fibula.png"
+                data-alt="Ejemplo ilustrativo de herramientas y utensilios antiguos"
+                data-description="Los utensilios y herramientas podían emplearse en tareas domésticas, trabajos artesanales y actividades agrícolas. Sus materiales y formas dependían de la función para la que estaban destinados."
+                data-context="El contexto arqueológico y las huellas de uso son esenciales para interpretar correctamente cada herramienta y distinguir sus posibles funciones."
+              >
+                <img
+                  class="artifact-card__image"
+                  src="../img/hallazgos/vidaCotidiana/fibula.png"
+                  alt="Ejemplo ilustrativo de herramientas y utensilios romanos"
+                />
+                <span class="artifact-card__body">
+                  <span class="artifact-card__category">Trabajo y hogar</span>
+                  <span class="artifact-card__title">Utensilios</span>
+                  <span class="artifact-card__description">
+                    Herramientas para las tareas de cada día.
+                  </span>
+                  <span class="artifact-card__more">Ver ficha →</span>
+                </span>
+              </button>
+
+              <button
+                class="artifact-card"
+                type="button"
+                data-title="Recipientes domésticos"
+                data-category="Alimentación"
+                data-image="../img/hallazgos/vidaCotidiana/fibula.png"
+                data-alt="Ejemplo ilustrativo de recipientes de época romana"
+                data-description="Los recipientes se empleaban para preparar, servir y conservar alimentos. La variedad de formas cerámicas refleja las distintas necesidades de la vida doméstica."
+                data-context="El análisis de los restos cerámicos ayuda a estudiar las prácticas alimentarias y las actividades económicas de los asentamientos romanos."
+              >
+                <img
+                  class="artifact-card__image"
+                  src="../img/hallazgos/vidaCotidiana/fibula.png"
+                  alt="Ejemplo ilustrativo de recipientes domésticos romanos"
+                />
+                <span class="artifact-card__body">
+                  <span class="artifact-card__category">Alimentación</span>
+                  <span class="artifact-card__title"
+                    >Recipientes domésticos</span
+                  >
+                  <span class="artifact-card__description">
+                    Objetos relacionados con la preparación y conservación de
+                    alimentos.
+                  </span>
+                  <span class="artifact-card__more">Ver ficha →</span>
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </section>

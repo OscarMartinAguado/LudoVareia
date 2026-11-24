@@ -2694,3 +2694,151 @@ a.feature-card:focus-visible,
 [hidden] {
   display: none !important;
 }
+
+/* =========================================================
+   LUDOVAREIA — FILTRADO DE CATÁLOGOS
+   ========================================================= */
+
+/* CONTENEDOR DEL CATÁLOGO */
+
+.artifact-catalog {
+  width: 100%;
+}
+
+/* CONTROLES */
+
+.catalog-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+/* BUSCADOR */
+
+.catalog-search {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.catalog-search label {
+  font-weight: 600;
+}
+
+.catalog-search input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  color: var(--color-text);
+  font: inherit;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.catalog-search input:focus {
+  border-color: var(--color-orange-focus);
+  box-shadow: 0 0 0 3px rgb(138 67 31 / 15%);
+}
+
+.catalog-search input:focus-visible {
+  outline: 3px solid var(--color-orange-focus);
+  outline-offset: 2px;
+}
+
+/* BOTONES DE FILTRADO */
+
+.catalog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.catalog-filter {
+  padding: 0.7rem 1.1rem;
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  background-color: transparent;
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.catalog-filter:hover {
+  border-color: var(--color-orange-focus);
+}
+
+.catalog-filter.is-active {
+  background-color: var(--color-orange-accessible);
+  border-color: var(--color-orange-accessible);
+  color: var(--color-white);
+}
+
+.catalog-filter:focus-visible {
+  outline: 3px solid var(--color-orange-focus);
+  outline-offset: 3px;
+}
+
+/* CONTADOR */
+
+.catalog-results {
+  margin: 0;
+  color: var(--color-text-soft);
+  font-size: 0.95rem;
+}
+
+.catalog-results strong {
+  color: var(--color-orange-accessible);
+}
+
+/* MENSAJE SIN RESULTADOS */
+
+.catalog-empty {
+  padding: 2rem 1rem;
+  margin: 1.5rem 0;
+  border: var(--border-soft);
+  border-radius: var(--radius-md);
+  color: var(--color-text-soft);
+  text-align: center;
+  background-color: var(--color-surface);
+}
+
+/* OCULTAR TARJETAS FILTRADAS */
+
+.artifact-card[hidden] {
+  display: none !important;
+}
+
+.catalog-empty[hidden] {
+  display: none !important;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+  .catalog-controls {
+    gap: 1rem;
+  }
+
+  .catalog-filters {
+    gap: 0.5rem;
+  }
+
+  .catalog-filter {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .catalog-search {
+    max-width: none;
+  }
+}
