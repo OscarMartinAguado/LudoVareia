@@ -6,7 +6,7 @@
     <meta name="robots" content="index,follow" />
     <meta
       name="description"
-      content="Información sobre privacidad y tratamiento de datos en LudoVareia."
+      content="Información sobre los datos que guardan localmente los formularios de demostración de LudoVareia."
     />
     <link
       rel="canonical"
@@ -18,7 +18,7 @@
     <meta property="og:title" content="Privacidad | LudoVareia" />
     <meta
       property="og:description"
-      content="Información sobre privacidad y tratamiento de datos en LudoVareia."
+      content="Información sobre los datos que guardan localmente los formularios de demostración de LudoVareia."
     />
     <meta
       property="og:url"
@@ -32,7 +32,7 @@
     <meta name="twitter:title" content="Privacidad | LudoVareia" />
     <meta
       name="twitter:description"
-      content="Información sobre privacidad y tratamiento de datos en LudoVareia."
+      content="Información sobre los datos que guardan localmente los formularios de demostración de LudoVareia."
     />
     <meta
       name="twitter:image"
@@ -67,6 +67,7 @@
           <a href="historia.html" class="navbar__link">Historia</a>
           <a href="hallazgos.html" class="navbar__link">Hallazgos</a>
           <a href="galeria.html" class="navbar__link">Galería</a>
+          <a href="actividades.html" class="navbar__link">Actividades</a>
         </div>
       </div>
     </nav>
@@ -75,9 +76,10 @@
         <p class="eyebrow">Información del proyecto</p>
         <h1>Privacidad</h1>
         <p class="legal-page__notice">
-          Esta información describe el funcionamiento actual del sitio y no
-          constituye asesoramiento jurídico. Debe revisarse si cambia el
-          tratamiento de datos.
+          Esta información describe el prototipo actual y no constituye
+          asesoramiento jurídico. Si los formularios pasan a gestionar reservas
+          reales o las reseñas se publican, habrá que revisar y actualizar esta
+          página antes de activar esas funciones.
         </p>
 
         <h2>Responsable y contacto</h2>
@@ -89,13 +91,33 @@
 
         <h2>Qué información se guarda y dónde</h2>
         <p>
-          El sitio no incluye formularios para recopilar datos personales ni
-          guarda información personal en el almacenamiento local del navegador.
-          El diálogo de donación es una simulación y no procesa pagos.
+          Los formularios son demostraciones y no envían sus datos a un servidor
+          de LudoVareia. Si se completan, el navegador guarda la información en
+          su almacenamiento local (localStorage) en este dispositivo:
         </p>
+        <ul>
+          <li>
+            El formulario de actividad guarda nombre, correo electrónico,
+            teléfono opcional, número de asistentes, identificador de actividad
+            y fecha de la prueba.
+          </li>
+          <li>
+            El formulario de reseña guarda el nombre introducido, puntuación,
+            comentario, actividad y fecha. La reseña solo aparece en este
+            navegador; no se publica ni se comparte con otros visitantes.
+          </li>
+        </ul>
+        <p>
+          Estos datos permanecen en el navegador hasta que se borren sus datos
+          de sitio o almacenamiento. No introduzcas nombres, teléfonos, correos
+          ni comentarios reales.
+        </p>
+
         <h2>Uso y destinatarios</h2>
         <p>
-          La web está alojada en Vercel, que puede tratar información técnica
+          La información local se usa únicamente para mostrar cómo funcionarían
+          los formularios. LudoVareia no recibe ni comparte esos registros. La
+          web está alojada en Vercel, que puede tratar información técnica
           necesaria para prestar el servicio de alojamiento; consulta el
           <a
             href="https://vercel.com/legal/privacy-notice"
@@ -106,6 +128,13 @@
           >.
         </p>
 
+        <h2>Cómo borrar los datos de demostración</h2>
+        <p>
+          Puedes eliminar lo guardado desde la configuración del navegador,
+          borrando los datos del sitio ludovareia.vercel.app. Como los datos de
+          los formularios no se transmiten al responsable, LudoVareia no
+          conserva una copia en un servidor.
+        </p>
         <p>
           El Aviso Legal completo queda pendiente. Esta página no afirma que la
           información publicada cubra por sí sola todas las obligaciones que

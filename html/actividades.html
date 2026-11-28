@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="author" content="Oscar Martin Aguado" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Explora el calendario de visitas y talleres educativos sobre la antigua Vareia."
+    />
+    <link
+      rel="canonical"
+      href="https://ludovareia.vercel.app/html/actividades.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="LudoVareia" />
+    <meta property="og:title" content="Actividades | LudoVareia" />
+    <meta
+      property="og:description"
+      content="Explora el calendario de visitas y talleres educativos sobre la antigua Vareia."
+    />
+    <meta
+      property="og:url"
+      content="https://ludovareia.vercel.app/html/actividades.html"
+    />
+    <meta
+      property="og:image"
+      content="https://ludovareia.vercel.app/img/vareiaStart.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Reconstrucción del antiguo asentamiento romano de Vareia"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Actividades | LudoVareia" />
+    <meta
+      name="twitter:description"
+      content="Explora el calendario de visitas y talleres educativos sobre la antigua Vareia."
+    />
+    <meta
+      name="twitter:image"
+      content="https://ludovareia.vercel.app/img/vareiaStart.png"
+    />
+
+    <meta
+      name="keywords"
+      content="actividades en vareia, actividades romanas, talleres romanos, visitas guiadas, eventos en vareia"
+    />
+
+    <title>Actividades | LudoVareia</title>
+    <link rel="stylesheet" href="../css/General/style.css" />
+    <link rel="stylesheet" href="../css/Actividades/actividades.css" />
+
+    <script src="../js/Actividades/actividades.js" defer></script>
+    <script src="../js/General/mapa.js" defer></script>
+    <script src="../js/General/donacion.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+    <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a
+          href="../index.html"
+          class="site-header__brand"
+          aria-label="LudoVareia - Inicio"
+        >
+          <img src="../img/logo.png" alt="" class="site-header__logo" />
+          <span class="site-header__name"
+            >Ludo<span class="text-orange">Vareia</span></span
+          >
+        </a>
+        <div class="site-header__decoration" aria-hidden="true">
+          ◆ ◇ ◆ ◇ ◆ ◇ ◆
+        </div>
+
+        <button
+          type="button"
+          id="donate-button"
+          class="site-header__donate"
+          aria-haspopup="dialog"
+          aria-controls="donate-popup"
+        >
+          <span>Donación de prueba</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- =====================================================
+        NAVBAR
+        ===================================================== -->
+
+    <nav class="navbar" aria-label="Navegación principal">
+      <div class="container navbar__inner">
+        <div class="navbar__links">
+          <a href="../index.html" class="navbar__link">Inicio</a>
+          <a href="historia.html" class="navbar__link">Historia</a>
+          <a href="hallazgos.html" class="navbar__link">Hallazgos</a>
+          <a href="galeria.html" class="navbar__link">Galería</a>
+          <a
+            href="actividades.html"
+            class="navbar__link is-active"
+            aria-current="page"
+            >Actividades</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- =====================================================
+       MAIN
+       ===================================================== -->
+    <main id="contenido" class="activities-page" tabindex="-1">
+      <section class="activities-intro">
+        <div class="container">
+          <p class="eyebrow">Vareia · Aprende y descubre</p>
+          <h1>Actividades</h1>
+          <div class="hero__ornament" aria-hidden="true">◆</div>
+          <p class="activities-intro__text">
+            Visitas, talleres y propuestas para acercarte al pasado romano de
+            una forma diferente. Elige una fecha en el calendario o descubre lo
+            que viene pronto.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="container upcoming-section"
+        aria-labelledby="upcoming-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Apunta la fecha</p>
+            <h2 id="upcoming-title">Dentro de poco</h2>
+          </div>
+          <span class="upcoming-section__note">Fechas de ejemplo</span>
+        </div>
+        <div class="upcoming-list" id="upcoming-list" aria-live="polite"></div>
+      </section>
+
+      <section
+        class="container calendar-section"
+        aria-labelledby="calendar-title"
+      >
+        <div class="section-heading calendar-section__heading">
+          <div>
+            <p class="eyebrow">Planifica tu visita</p>
+            <h2 id="calendar-title">Calendario</h2>
+          </div>
+          <div class="calendar-controls" aria-label="Cambiar mes">
+            <button
+              type="button"
+              class="calendar-controls__button"
+              id="month-prev"
+              aria-label="Mes anterior"
+            >
+              ‹
+            </button>
+            <p
+              class="calendar-controls__month"
+              id="calendar-month"
+              aria-live="polite"
+            ></p>
+            <button
+              type="button"
+              class="calendar-controls__button"
+              id="month-next"
+              aria-label="Mes siguiente"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+
+        <div class="calendar" role="grid" aria-labelledby="calendar-month">
+          <div class="calendar__weekdays" role="row">
+            <span role="columnheader">Lun</span>
+            <span role="columnheader">Mar</span>
+            <span role="columnheader">Mié</span>
+            <span role="columnheader">Jue</span>
+            <span role="columnheader">Vie</span>
+            <span role="columnheader">Sáb</span>
+            <span role="columnheader">Dom</span>
+          </div>
+          <div class="calendar__days" id="calendar-days" role="rowgroup"></div>
+        </div>
+        <p class="calendar-note">
+          Programación de ejemplo con fechas orientativas. Los formularios no
+          confirman plazas ni envían datos.
+        </p>
+      </section>
+    </main>
+
+    <!-- FONDO OSCURO -->
+    <div class="donate-overlay" hidden></div>
+
+    <!-- POPUP DE DONACIÓN -->
+    <section
+      class="donate-popup"
+      id="donate-popup"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="donate-title"
+      aria-describedby="donate-description"
+      tabindex="-1"
+      hidden
+    >
+      <button
+        type="button"
+        class="donate-popup__close"
+        aria-label="Cerrar ventana"
+        data-donate-close
+      >
+        ×
+      </button>
+
+      <div class="donate-popup__header">
+        <span class="donate-popup__eyebrow">
+          LUDOVAREIA · PATRIMONIO ROMANO
+        </span>
+
+        <div class="donate-popup__ornament" aria-hidden="true">◆</div>
+
+        <h2 id="donate-title">Demostración de donación</h2>
+
+        <p id="donate-description">
+          Este prototipo no acepta donaciones. Puedes probar la interfaz, pero
+          no se realizará ningún cobro ni se enviarán datos.
+        </p>
+      </div>
+
+      <form id="donation-form">
+        <fieldset class="donate-amounts">
+          <legend>Selecciona un importe de prueba</legend>
+
+          <div class="donate-amounts__grid">
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="1"
+              aria-pressed="false"
+            >
+              1 €
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount is-selected"
+              data-amount="5"
+              aria-pressed="true"
+            >
+              5 €
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="15"
+              aria-pressed="false"
+            >
+              15 €
+            </button>
+
+            <button
+              type="button"
+              class="donate-amount"
+              data-amount="30"
+              aria-pressed="false"
+            >
+              30 €
+            </button>
+          </div>
+        </fieldset>
+
+        <div class="donate-custom">
+          <label for="donation-amount">
+            O introduce otro importe de prueba (€)
+          </label>
+
+          <input
+            type="number"
+            id="donation-amount"
+            min="1"
+            max="50"
+            step="0.01"
+            placeholder="Ej. 15"
+            inputmode="decimal"
+          />
+
+          <p class="donate-custom__help">
+            Puedes elegir cualquier cantidad entre 1 € y 50 €.
+          </p>
+        </div>
+
+        <div class="donate-summary">
+          <span>Importe de prueba</span>
+          <strong id="donation-summary" aria-live="polite" aria-atomic="true"
+            >5,00 €</strong
+          >
+        </div>
+
+        <button type="submit" class="donate-submit">
+          Finalizar demostración
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <p class="donate-popup__note">No se realizará ningún cobro.</p>
+      </form>
+    </section>
+
+    <!-- POPUP DE AGRADECIMIENTO -->
+    <section
+      class="donate-popup donate-popup--thank-you"
+      id="donate-thank-you"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="thank-you-title"
+      tabindex="-1"
+      hidden
+    >
+      <button
+        type="button"
+        class="donate-popup__close"
+        aria-label="Cerrar ventana"
+        data-donate-close
+      >
+        ×
+      </button>
+
+      <div class="donate-thank-you__icon" aria-hidden="true">✓</div>
+
+      <span class="donate-popup__eyebrow"> LUDOVAREIA · GRACIAS </span>
+
+      <h2 id="thank-you-title">Demostración completada</h2>
+
+      <p>No se ha realizado ningún cobro ni se ha enviado información.</p>
+
+      <p id="thank-you-amount" class="donate-thank-you__amount"></p>
+
+      <p class="donate-thank-you__disclaimer">
+        Esta es una demostración del formulario. No se ha realizado ningún
+        cobro.
+      </p>
+
+      <button type="button" class="donate-submit" data-donate-close>
+        Volver a LudoVareia
+      </button>
+    </section>
+
+    <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <!-- MARCA -->
+
+          <div class="footer__brand">
+            <img src="../img/logo.png" alt="LudoVareia" class="brand-logo" />
+
+            <span> Ludo<span class="text-orange">Vareia</span> </span>
+          </div>
+
+          <!-- INFORMACIÓN -->
+
+          <div class="footer__info">
+            <span>VAREIA · LA RIOJA</span>
+            <span>Proyecto educativo sobre el patrimonio romano</span>
+          </div>
+
+          <!-- ICONOS -->
+
+          <div class="footer__icons" aria-label="Información del proyecto">
+            <button
+              type="button"
+              id="open-map"
+              aria-label="Abrir plano de Vareia"
+              aria-haspopup="dialog"
+              aria-controls="map-modal"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z" />
+                <path d="M9 3v15M15 6v15" />
+                <path d="M5.5 9h1M11 8h2M17 10h2" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- PIE -->
+
+        <div class="footer__bottom">
+          <span>Patrimonio arqueológico de Vareia</span>
+          <nav class="footer__nav" aria-label="Información legal">
+            <a href="privacidad.html">Privacidad</a>
+            <a href="cookies.html">Cookies</a>
+            <a href="condiciones.html">Condiciones</a>
+          </nav>
+          <span>© 2026 LudoVareia</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- POPUP DEL PLANO DE VAREIA -->
+    <div
+      class="map-modal"
+      id="map-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="map-modal-title"
+      hidden
+    >
+      <div class="map-modal__backdrop" data-map-close></div>
+
+      <section class="map-modal__panel">
+        <button
+          type="button"
+          class="map-modal__close"
+          aria-label="Cerrar plano"
+          data-map-close
+        >
+          ×
+        </button>
+
+        <p class="eyebrow">Vareia · La Rioja</p>
+        <h2 id="map-modal-title">La antigua ciudad romana</h2>
+
+        <p class="map-modal__description">
+          Plano de reconstrucción de Vareia. Descubre cómo pudo ser el
+          asentamiento en época romana.
+        </p>
+
+        <div class="map-modal__image-container">
+          <img
+            src="../img/plano-vareia.png"
+            alt="Plano de reconstrucción de la antigua ciudad romana de Vareia"
+            class="map-modal__image"
+          />
+        </div>
+
+        <p class="map-modal__note">Plano ilustrativo de la antigua Vareia.</p>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,408 @@
+/* =================================================
+   SISTEMA DE RESEÑAS - LUDOVAREIA
+   ================================================= */
+
+.reviews-section {
+  padding: 35px 0 45px;
+}
+
+.reviews-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.reviews-header h2 {
+  margin-bottom: 12px;
+}
+
+.reviews-header > p:last-child {
+  color: var(--color-text-soft);
+  font-size: 0.82rem;
+}
+
+/* RESUMEN */
+
+.reviews-summary {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.reviews-average {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.reviews-average strong {
+  color: var(--color-brown-dark);
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+}
+
+.reviews-average div {
+  color: var(--color-orange-accessible);
+  font-size: 1.25rem;
+  letter-spacing: 3px;
+}
+
+.reviews-average span {
+  color: var(--color-text-soft);
+  font-size: 0.7rem;
+}
+
+/* TARJETAS */
+
+#reviews-list {
+  display: grid;
+  gap: 12px;
+  padding: 20px 0;
+}
+
+.review-card {
+  padding: 17px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+}
+
+.review-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.review-card__header strong {
+  color: var(--color-brown-dark);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.review-card__stars {
+  color: #a94d00;
+  letter-spacing: 2px;
+  font-size: 1rem;
+}
+
+.review-card p {
+  margin-bottom: 10px;
+  color: var(--color-text);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.review-card small {
+  color: var(--color-text-soft);
+  font-size: 0.65rem;
+}
+
+/* FORMULARIO */
+
+.reviews-form-container {
+  max-width: 650px;
+  padding: 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.reviews-form-container h3 {
+  margin-bottom: 20px;
+}
+
+#review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#review-form > label {
+  color: var(--color-brown-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+#review-name,
+#review-comment {
+  width: 100%;
+  padding: 12px;
+  color: var(--color-ink);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 0.8rem;
+}
+
+#review-comment {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#review-name:focus,
+#review-comment:focus {
+  outline: 2px solid var(--color-green-light);
+  outline-offset: 2px;
+}
+
+/* ESTRELLAS INTERACTIVAS */
+
+.review-stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.review-stars input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.review-stars label {
+  color: #686868;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* Al pasar el ratón */
+.review-stars label:hover,
+.review-stars label:hover ~ label {
+  color: #a94d00;
+}
+
+/* Al seleccionar una puntuación */
+.review-stars input:checked ~ label {
+  color: #a94d00;
+}
+
+/* Accesibilidad con teclado */
+.review-stars input:focus-visible + label {
+  outline: 2px solid #653500;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* BOTÓN */
+
+#review-form button {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+#review-form button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+#review-message {
+  color: #245b35;
+  font-size: 0.8rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+  .reviews-section {
+    padding: 25px 0 35px;
+  }
+
+  .reviews-form-container {
+    padding: 18px;
+  }
+
+  .review-card__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* =================================================
+   BOTÓN PARA ESCRIBIR RESEÑAS
+   ================================================= */
+
+.reviews-action {
+  margin-top: 15px;
+  padding: 25px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.reviews-action h3 {
+  margin-bottom: 8px;
+}
+
+.reviews-action p {
+  margin-bottom: 18px;
+  color: var(--color-text-soft);
+  font-size: 0.8rem;
+}
+
+/* =================================================
+   POPUP DE RESEÑAS
+   ================================================= */
+
+.review-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(25, 20, 15, 0.7);
+  backdrop-filter: blur(3px);
+}
+
+.review-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1001;
+  width: min(92%, 550px);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transform: translate(-50%, -50%);
+}
+
+.review-popup__header {
+  margin-bottom: 22px;
+  padding-right: 20px;
+}
+
+.review-popup__header h2 {
+  margin-bottom: 10px;
+}
+
+.review-popup__header > p:last-child {
+  color: var(--color-text-soft);
+  font-size: 0.8rem;
+}
+
+.review-popup__close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  color: var(--color-brown-dark);
+  background: transparent;
+  border: 0;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.review-popup__close:hover {
+  color: #a94d00;
+}
+
+.review-popup .reviews-form-container {
+  max-width: none;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+/* OCULTAR POPUP */
+
+.review-popup[hidden],
+.review-overlay[hidden] {
+  display: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+  .review-popup {
+    padding: 22px;
+    max-height: 85vh;
+  }
+
+  .reviews-action {
+    padding: 18px;
+  }
+}
+
+/* =================================================
+   DISTRIBUCIÓN DE ACTIVIDAD Y RESEÑAS
+   ================================================= */
+
+.activity-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.activity-layout--unavailable {
+  grid-template-columns: 1fr;
+}
+
+.activity-layout--unavailable .activity-detail {
+  display: block;
+}
+
+/* COLUMNA PRINCIPAL */
+
+.activity-layout__main {
+  min-width: 0;
+}
+
+/* COLUMNA DE RESEÑAS */
+
+.activity-layout__reviews {
+  min-width: 0;
+  position: sticky;
+  top: 20px;
+}
+
+/* RESEÑAS */
+
+.activity-layout__reviews .reviews-section {
+  padding: 0;
+}
+
+.activity-layout__reviews .reviews-header {
+  padding-bottom: 15px;
+}
+
+.activity-layout__reviews .reviews-summary {
+  padding: 18px 0;
+}
+
+.activity-layout__reviews .reviews-action {
+  margin-top: 0;
+  padding: 18px;
+}
+
+.activity-layout__reviews #reviews-list {
+  max-height: 450px;
+  overflow-y: auto;
+  padding: 15px 4px 15px 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .activity-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .activity-layout__reviews {
+    position: static;
+  }
+
+  .activity-layout__reviews #reviews-list {
+    max-height: none;
+    overflow: visible;
+  }
+}
